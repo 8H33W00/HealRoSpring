@@ -15,4 +15,14 @@ public class ViewController {
 		return mv;
 		
 	}
+	
+	
+	@GetMapping("/heartDisease")
+	public ModelAndView heartDisease()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("heart-disease");
+		return mv;
+		
+	}
 }
