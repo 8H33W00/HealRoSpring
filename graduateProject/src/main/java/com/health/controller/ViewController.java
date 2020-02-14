@@ -26,6 +26,16 @@ public class ViewController {
 		
 	}
 	
+	
+	@GetMapping("/predictHeartDisease")
+	public ModelAndView predictHeartDisease()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("predict-heart-disease");
+		return mv;
+		
+	}
+	
 	@GetMapping("/login")
 	public ModelAndView login()
 	{

@@ -18,18 +18,22 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
-            <form class="form-signin">
+            <div class="form-signin">
               <div class="form-label-group">
                 <input type="text" id="inputEmail" class="form-control" placeholder="ID" required autofocus>
+                <div class="invalid-feedback col-5" id ="validinputEmail">
+						Please Input Your ID
+				</div>
                 <label for="inputEmail">ID</label>
               </div>
 
               <div class="form-label-group">
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <div class="invalid-feedback col-5" id ="validinputPassword">Please Input Your Password</div>
                 <label for="inputPassword">Password</label>
               </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-            </form>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" onclick ='signIn()'>Sign in</button>
+            </div>
             <hr class="my-4">
             <button class="btn btn-lg  btn-block text-uppercase" data-toggle="modal" data-target="#createUserModal">Sign up</button>
           </div>
@@ -46,26 +50,33 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <form id="frmSelectCmpny" th:action="@{/selectCmpny}" method="post">
               <div class="modal-body">
                 <div class="form-group">
                   <label for="selUserId">ID</label>
-                  <input type="text" class="form-control" id="selUserId" name="userId" placeholder="Input Your ID">
+                  <input type="text" class="form-control" id="selUserId" name="userId" placeholder="Input Your ID" required>
+                  <div class="invalid-feedback col-5" id ="validselUserId">
+						Please Input Your ID
+				 </div>
                 </div>
                 <div class="form-group">
                   <label for="selUserPwd">Password</label>
-                  <input type="text" class="form-control" id="selUserPwd" name="userPwd" placeholder="Input Your Password">
+                  <input type="password" class="form-control" id="selUserPwd" name="userPwd" placeholder="Input Your Password" required>
+                  <div class="invalid-feedback col-5" id ="validselUserPwd">
+						Please Input Your Password
+				 </div>
                 </div>
                 <div class="form-group">
-                  <label for="selUserNm">Name</label>
-                  <input type="text" class="form-control" id="selUserNm" name="userNm" placeholder="Input Your Name">
+                  <label for="selUserNm">Nickname</label>
+                  <input type="text" class="form-control" id="selUserNm" name="userNm" placeholder="Input Your English NickName" required>
+                  <div class="invalid-feedback col-5" id ="validselUserNm">
+						Please Input Your Nickname
+				 </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id ="modalClose">Close</button>
+                <button onclick ='signUp()' class="btn btn-primary">Create</button>
               </div>
-            </form>
           </div>
         </div>
       </div>
@@ -74,10 +85,9 @@
 
 
 
-
-	  
-	  
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	  	  
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  	  
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/common.js"></script>
+<script src="./js/login.js"></script>
 </body>
 </html>
