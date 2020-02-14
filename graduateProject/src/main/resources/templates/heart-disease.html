@@ -41,7 +41,7 @@
     <div class="row" style="text-align: center; margin: 0 auto;">
         <div class="col-5" style="text-align: center; border: 1px solid black; padding: 30px 0;">
             <h3>We can predict your heart disease incidence!</h3>
-            <a style="margin-top: 30px;" class="btn btn-primary btn-lg" href="#" role="button">PREDICTION</a>
+            <a style="margin-top: 30px;" class="btn btn-primary btn-lg" onclick="heartDiseasePredict()" role="button">PREDICTION</a>
         </div>
     </div>
     <div id="E_WRAP">
@@ -188,7 +188,12 @@
     </div>
 </div>
 </div>
+
+<script th:inline="javascript">
+    	var userNickName = [[${session.userNickName}]];
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>	  	  
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/common.js"></script>
 </body>
 </html>

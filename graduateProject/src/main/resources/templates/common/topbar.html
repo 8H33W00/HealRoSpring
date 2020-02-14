@@ -33,10 +33,26 @@
       				  <a class="nav-link" href="#">Vascular disease</a>
 	 			 </li>
 	 		</ul>
+   			
    			 <ul class="navbar-nav navbar-right">
-      			  <li id="liNotUser"class="nav-item">
- 	  				  <a class="nav-link" href="#"><i class ="fas fa-sign-in-alt" style="font-size:50px;"></i></a>
+      			  <li th:if="${session.userNickName} == null" id="liNotUser"class="nav-item">
+ 	  				  <a class="nav-link" href="login"><i class ="fas fa-sign-in-alt" style="font-size:50px;"></i></a>
 	 			 </li>
+	 			 <li th:if="${session.userNickName} != null" id="liUser" class="nav-item dropdown">
+ 	   				 <button  class="btn btn-dark btn-rounded text-bold" th:text="${session.userNickName}" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+ 	     			</button>
+ 	    			<div class="dropdown-menu" aria-labelledby="userDropdown">
+ 	     				 <a class="dropdown-item" href="#">
+ 	      				  My Account
+ 	      				</a>
+ 	      				<a id="adminPage" class="dropdown-item" href="#">
+ 	     				   Admin Page
+ 	     				</a>
+ 	      				<a class="dropdown-item" href="javascript:logout();">
+ 	       				 Logout
+ 	      				</a>
+ 	   			   </div>
+			   </li>
    			 </ul>
 		  </div>
 	</nav>
@@ -47,5 +63,6 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 </html>
