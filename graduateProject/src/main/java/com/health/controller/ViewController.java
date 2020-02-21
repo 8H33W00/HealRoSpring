@@ -16,6 +16,16 @@ public class ViewController {
 		
 	}
 	
+	@GetMapping("/diabetes")
+	public ModelAndView diabetes()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("diabetes");
+		return mv;
+		
+	}
+	
+	
 	
 	@GetMapping("/heartDisease")
 	public ModelAndView heartDisease()
@@ -32,6 +42,15 @@ public class ViewController {
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("predict-heart-disease");
+		return mv;
+		
+	}
+	
+	@GetMapping("/predictDiabetes")
+	public ModelAndView predictDiabetes()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("predict-diabetes");
 		return mv;
 		
 	}

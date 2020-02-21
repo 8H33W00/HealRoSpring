@@ -32,3 +32,16 @@ function heartDiseasePredict()
 		getView('login');
 	}
 }
+
+
+function diabetesPredict()
+{
+	if(userNickName != null)
+	{
+		getView('predictDiabetes');
+	}
+	else
+	{
+		getView('login');
+	}
+}
