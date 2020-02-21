@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Check Diabetes</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">    
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="./css/diabetes.css">
+</head>
+
+<body>
+
+<div class ="container">
+	<div th:replace = "./common/topbar :: topbar"></div>
+	<div class="jumbotron">
+	 <h1 class="display-4">Diabetes</h1>
+	 <hr>
+		<div class ="row mt-3 ml-3">
+			<div class="col-5">
+				<div class="row">
+					<iframe id="youtube" width="400" height="200" src="https://www.youtube.com/embed/YUT33Lgo0jo?&amp;autoplay=1&amp;loop=1 frameborder=" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+				<div class="row mt-4">
+						<h1>Predict Your Diabetes Incidence!</h1>
+						
+				</div>
+				<div class="row mt-3 mr-3">
+					<button class="btn btn-primary btn-lg btn-block" onclick ="diabetesPredict()">Predict</button>
+				</div>
+			</div>
+			<div class="col-7" id ="explain">
+				Diabetes mellitus (DM), commonly known as diabetes, is a group of metabolic disorders characterized by a high blood sugar level over a prolonged period of time. Symptoms often include frequent urination, increased thirst, and increased hunger. If left untreated, diabetes can cause many complications.
+				<br> Acute complications can include diabetic ketoacidosis, hyperosmolar hyperglycemic state, or death.
+				Serious long-term complications include cardiovascular disease, stroke, chronic kidney disease, foot ulcers, damage to the nerves, and damage to the eyes.
+				Diabetes is due to either the pancreas not producing enough insulin, or the cells of the body not responding properly to the insulin produced. There are three main types of diabetes mellitus
+				Type 1 diabetes results from the pancreas's failure to produce enough insulin due to loss of beta cells. This form was previously referred to as "insulin-dependent diabetes mellitus" (IDDM) or "juvenile diabetes".The loss of beta cells is caused by an autoimmune response. The cause of this autoimmune response is unknown.
+				Type 2 diabetes begins with insulin resistance, a condition in which cells fail to respond to insulin properly. As the disease progresses, a lack of insulin may also develop.This form was previously referred to as "non insulin-dependent diabetes mellitus" (NIDDM) or "adult-onset diabetes". The most common cause is a combination of excessive body weight and insufficient exercise.
+				Gestational diabetes is the third main form, and occurs when pregnant women without a previous history of diabetes develop high blood sugar levels.
+			</div>
+		</div>
+	<hr>
+	<div class="row ml-2" >
+		<div class="col-5 mt-4" id ="explain2">
+		<h3 class="mt-4">Diabetes Symptoms</h3>
+		<ul class ="mt-4">
+			<li>Urinating often.</li>
+			<li>Feeling very thirsty.</li>
+			<li>Feeling very hungry—even though you are eating.</li>
+			<li>Extreme fatigue.</li>
+			<li>Blurry vision.</li>
+			<li>Cuts/bruises that are slow to heal.</li>
+			<li>Weight loss—even though you are eating more (type 1)</li>
+			<li>Tingling, pain, or numbness in the hands/feet (type 2)</li>
+		</ul>
+		</div>
+		<div class ="col-7">
+			<img src="./img/diabetes.png">
+		</div>
+	</div>
+	</div> 
+</div>
+<script th:inline="javascript">
+    	var userNickName = [[${session.userNickName}]];
+</script>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  	  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="./js/common.js"></script>
+<script src="./js/diabetes.js"></script>
+</body>
+</html>
