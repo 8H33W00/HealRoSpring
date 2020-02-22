@@ -12,6 +12,7 @@ public class ViewController {
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
+		
 		return mv;
 	}
 	
