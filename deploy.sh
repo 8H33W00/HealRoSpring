@@ -1,5 +1,5 @@
-REPOSITORY= ./graduateProject # TODO 경로 수정
-sudo cd $REPOSITORY
+REPOSITORY= /graduateProject # TODO 경로 수정
+cd $REPOSITORY
 
 echo "> 프로젝트 Build 시작"
 ./gradlew build
