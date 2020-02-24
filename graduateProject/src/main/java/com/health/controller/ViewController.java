@@ -62,4 +62,12 @@ public class ViewController {
 		mv.setViewName("login");
 		return mv;
 	}
+	
+	@GetMapping("/mypage")
+	public ModelAndView mypage()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mypage");
+		return mv;
+	}
 }
