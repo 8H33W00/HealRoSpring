@@ -2,6 +2,11 @@
 @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
 @import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
 
+
+label{
+	font-size: 25px;
+}
+
 #explain{
 	font-family: 'Jeju Myeongjo', serif;
 	background-color: white;
@@ -15,7 +20,7 @@
 }
 
 #inputGroup{
-	font-family: 'Sriracha', cursive;
+	font-family: 'Hanna', serif;
 }
 
 #resultLabel{

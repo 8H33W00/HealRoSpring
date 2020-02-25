@@ -1,31 +1,30 @@
-
-
-
-
 $("#go").click(function(){ 
 		
 	$('#validAge').hide();
-	$('#validGlucose').hide();
+	$('#validSex').hide();
 	$('#validBloodPressure').hide();
-	$('#validSkinThickness').hide();
-	$('#validInsulin').hide();
+	$('#validCholesterol').hide();
+	$('#validSmoke').hide();
+	$('#validAlchol').hide();
+	$('#validActive').hide();
+	$('#validGlucose').hide();
 	$('#validBMI').hide();
 	
-	
-	
 		var data = {
-				Pregnancies : $('#Pregnancies').val(),
-				Glucose : $('#Glucose').val(),
+				Sex : $('#Sex').val(),
 				BloodPressure : $('#BloodPressure').val(),
-				SkinThickness : $('#SkinThickness').val(),
-				Insulin : $('#Insulin').val(),
+				Cholesterol : $('#Cholesterol').val(),
+				Glucose: $('#Glucose').val(),
+				Smoke : $('#Smoke').val(),
+				Alchol : $('#Alchol').val(),
+				Active : $('#Active').val(),
 				BMI : $('#BMI').val(),
 				Age : $('#Age').val()
 				
 		}
 		
-		if(data.Age == 0 || data.Glucose == 0 || data.BloodPressure == 0 || data.SkinThickness == 0 || data.Insulin == 0 || 
-				data.BMI == 0)
+		if(data.Age == 0 || data.Sex == -1  || data.BMI == 0 || data.BloodPressure == -1 || data.Glucose == -1 
+				|| data.Cholesterol == -1 || data.Smoke == -1 || data.Alchol == -1 || data.Active == -1)
 		{
 			
 			if(data.Age == 0)
@@ -33,40 +32,54 @@ $("#go").click(function(){
 				$('#validAge').show();
 			}
 			
-			if(data.Glucose == 0)
+			if(data.Sex == -1)
 			{
-				$('#validGlucose').show();
+				$('#validSex').show();
 			}
-			
-			if(data.BloodPressure == 0)
-			{
-				$('#validBloodPressure').show();
-			}
-			
-			if(data.SkinThickness == 0)
-			{
-				$('#validSkinThickness').show();
-			}
-			
-			if(data.Insulin == 0)
-			{
-				$('#validInsulin').show();
-			}
-			
 			if(data.BMI == 0)
 			{
 				$('#validBMI').show();
 			}
+			
+			
+			if(data.BloodPressure == -1)
+			{
+				$('#validBloodPressure').show();
+			}
+			
+			if(data.Cholesterol == -1)
+			{
+				$('#validCholesterol').show();
+			}
+			
+			if(data.Smoke == -1)
+			{
+				$('#validSmoke').show();
+			}
+			if(data.Alchol == -1)
+			{
+				$('#validAlchol').show();
+			}
+			if(data.Active == -1)
+			{
+				$('#validActive').show();
+			}
+			
+			if(data.Glucose == -1)
+			{
+				$('#validGlucose').show();
+			}
 		}
 		else
 		{
+			
 			JSON.stringify(data);
 			console.log(data);
 			$.ajax({
 		        type: "GET",
 		        dataType: "jsonp",
 		        data : data,
-		        url: "http://localhost:5000/diabetes",
+		        url: "http://localhost:5000/heartDisease2",
 		        success: function (data) {
 		        	
 		        	var result = data.odd +"%";
@@ -76,11 +89,11 @@ $("#go").click(function(){
 		        }
 		    });
 			
-			
 		}
 		
 		
 }); 
+
 
 
 function calculate(){
@@ -117,8 +130,3 @@ function calculate(){
 		
 	}
 }
-
-
-/**
- * 
- */
