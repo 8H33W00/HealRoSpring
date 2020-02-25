@@ -14,49 +14,94 @@
 <div class ="container">
 	<div th:replace = "./common/topbar :: topbar"></div>
 	<div class ="jumbotron" id="inputGroup">
-		<h1>당뇨병 예측</h1>
+		<h1>심혈관 질환 예측</h1>
 		<div class="row">
 		<div class="col-7" >
 			<div class="mt-4 row">
 				<div class="col-10">
 					<label for="Age">나이</label>
-						<input class ="form-control" id="Age" type="number" value="0" required>
+						<input class ="form-control" id="Age" type="number" value="0">
 						<div class="invalid-feedback col-5" id ="validAge">나이를 입력하세요</div>
 				</div>
-				
 			</div>
-			<div class="mt-2 row">
+			<div class="mt-1 row">
 				<div class="col-10">
-					<label for="Pregnancies">임신 횟수</label>
-					<input class ="form-control" id="Pregnancies" type="number" value="0">
+					<label for="Sex">성별</label>
+					<select class ="form-control" id="Sex" >
+						<option selected="selected" value ="-1">선택하세요</option>
+						<option value ="2">남자</option>
+						<option value ="1">여자</option>
+					</select>
+					<div class="invalid-feedback col-5" id ="validSex">성별을 결정하세요</div>
 				</div>
 			</div>
-			<div class="mt-2 row">
+			<div class="mt-1 row">
 				<div class="col-10">
 					<label for="Glucose">혈당량</label>
-					<input class ="form-control" id="Glucose" type="number" value="0" required>
-					<div class="invalid-feedback col-5" id ="validGlucose">혈당량을 입력하세요</div>
+					<select class ="form-control" id="Glucose" >
+						<option selected="selected" value ="-1">선택하세요</option>
+						<option value ="3">매우 높음</option>
+						<option value ="2">약간 높음</option>
+						<option value ="1">정상</option>
+					</select>
+					<div class="invalid-feedback col-5" id ="validGlucose">혈당량을 정하세요</div>
 				</div>
 			</div>
-			<div class="mt-2 row">
+			<div class="mt-1 row">
 				<div class="col-10">
-					<label for="BloodPressure">혈압 (mm Hg)</label>
-					<input class ="form-control" id="BloodPressure" type="number" value="0" required>
-					<div class="invalid-feedback col-5" id ="validBloodPressure">혈압을 입력하세요</div>
+					<label for="BloodPressure">혈압</label>
+					<select class ="form-control" id="BloodPressure" >
+						<option selected="selected" value ="-1">선택하세요</option>
+						<option value ="3">고혈압</option>
+						<option value ="2">정상</option>
+						<option value ="1">저혈압</option>
+					</select>
+					<div class="invalid-feedback col-5" id ="validBloodPressure">혈압을 정하세요</div>
 				</div>
 			</div>
-			<div class="mt-2 row">
+			<div class="mt-1 row">
 				<div class="col-10">
-					<label for="SkinThickness">상부 삼두근 피부 두께 (mm)</label>
-					<input class ="form-control" id="SkinThickness" type="number" value="0" required>
-					<div class="invalid-feedback col-5" id ="validSkinThickness">피부 두께를 입력하세요</div>
+					<label for=Cholesterol >콜레스테롤 수치</label>
+					<select class ="form-control" id="Cholesterol" >
+						<option selected="selected" value ="-1">선택하세요</option>
+						<option value ="3">매우 높음</option>
+						<option value ="2">약간 높음</option>
+						<option value ="1">정상</option>
+					</select>
+					<div class="invalid-feedback col-5" id ="validCholesterol">콜레스테롤 수치를 정하세요</div>
 				</div>
 			</div>
-			<div class="mt-2 row">
-				<div class="col-10">
-					<label for="Insulin">혈중 인슐린 수치(mu U/ml)</label>
-					<input class ="form-control" id="Insulin" type="number" value="0" required>
-					<div class="invalid-feedback col-5" id ="validInsulin">혈중 인슐린 수치를 입력하세요</div>
+			<div class="mt-1 row">
+				<div class="col-10" >
+					<label for="Smoke">흡연 여부</label>
+					<select class ="form-control" id="Smoke" >
+						<option selected="selected" value ="-1">선택하세요</option>
+						<option value ="1">예</option>
+						<option value ="0">아니요</option>
+					</select>
+					<div class="invalid-feedback col-5" id ="validSmoke">흡연 여부를 정하세요</div>
+				</div>
+			</div>
+			<div class="mt-1 row">
+				<div class="col-10" >
+					<label for="Alchol">음주 여부</label>
+					<select class ="form-control" id="Alchol" >
+						<option selected="selected" value ="-1">선택하세요</option>
+						<option value ="1">예</option>
+						<option value ="0">아니요</option>
+					</select>
+					<div class="invalid-feedback col-5" id ="validAlchol">음주 여부를 정하세요</div>
+				</div>
+			</div>
+			<div class="mt-1 row">
+				<div class="col-10" >
+					<label for="Active">성향</label>
+					<select class ="form-control" id="Active" >
+						<option selected="selected" value ="-1">선택하세요</option>
+						<option value ="1">활동적</option>
+						<option value ="0">비활동적</option>
+					</select>
+					<div class="invalid-feedback col-5" id ="validActive">성향을 정하세요</div>
 				</div>
 			</div>
 			<div class="mt-2 row">
@@ -75,7 +120,7 @@
 					<h1 id="resultLabel">결과</h1>
 				</div>
 				<div class="row mt-4 mr-4">
-					<textarea  id="textArea" rows="8"  class="form-control" readonly>당뇨병에 걸릴 확률</textarea>
+					<textarea  id="textArea" rows="8"  class="form-control" readonly>심혈관 질환에 걸릴 확률</textarea>
 				</div>
 				<div class="row mt-4 mr-4" id ="go">
 					<button class="btn btn-primary btn-lg btn-block">Go</button>
@@ -123,6 +168,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  	  
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script src="./js/common.js"></script>
-<script src="./js/predict-diabetes.js"></script>
+<script src="./js/predict-heart-disease2.js"></script>
 </body>
 </html>

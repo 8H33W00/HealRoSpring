@@ -14,61 +14,68 @@
 <div class ="container">
 	<div th:replace = "./common/topbar :: topbar"></div>
 	<div class ="jumbotron" id="inputGroup">
-		<h1>Predict Diabetes Incidence</h1>
+		<h1>당뇨병 예측</h1>
 		<div class="row">
 		<div class="col-7" >
-			<div class="mt-1 row">
+			<div class="mt-4 row">
 				<div class="col-10">
-					<label for="Age">Age</label>
-						<input class ="form-control" id="Age" type="number" value="0">
+					<label for="Age">나이</label>
+						<input class ="form-control" id="Age" type="number" value="0" required>
+						<div class="invalid-feedback col-5" id ="validAge">나이를 입력하세요</div>
 				</div>
+				
 			</div>
-			<div class="mt-1 row">
+			<div class="mt-2 row">
 				<div class="col-10">
-					<label for="Pregnancies">Pregnancy Count</label>
+					<label for="Pregnancies">임신 횟수</label>
 					<input class ="form-control" id="Pregnancies" type="number" value="0">
 				</div>
 			</div>
-			<div class="mt-1 row">
+			<div class="mt-2 row">
 				<div class="col-10">
-					<label for="Glucose">Blood Sugar Level After Glucose Tolerance Test</label>
-					<input class ="form-control" id="Glucose" type="number" value="0">
+					<label for="Glucose">혈당량</label>
+					<input class ="form-control" id="Glucose" type="number" value="0" required>
+					<div class="invalid-feedback col-5" id ="validGlucose">혈당량을 입력하세요</div>
 				</div>
 			</div>
-			<div class="mt-1 row">
+			<div class="mt-2 row">
 				<div class="col-10">
-					<label for="BloodPressure">Expander Blood Pressure (mm Hg)</label>
-					<input class ="form-control" id="BloodPressure" type="number" value="0">
+					<label for="BloodPressure">혈압 (mm Hg)</label>
+					<input class ="form-control" id="BloodPressure" type="number" value="0" required>
+					<div class="invalid-feedback col-5" id ="validBloodPressure">혈압을 입력하세요</div>
 				</div>
 			</div>
-			<div class="mt-1 row">
+			<div class="mt-2 row">
 				<div class="col-10">
-					<label for="SkinThickness">Upper Triceps Skin Thickness (mm)</label>
-					<input class ="form-control" id="SkinThickness" type="number" value="0">
+					<label for="SkinThickness">상부 삼두근 피부 두께 (mm)</label>
+					<input class ="form-control" id="SkinThickness" type="number" value="0" required>
+					<div class="invalid-feedback col-5" id ="validSkinThickness">피부 두께를 입력하세요</div>
 				</div>
 			</div>
-			<div class="mt-1 row">
+			<div class="mt-2 row">
 				<div class="col-10">
-					<label for="Insulin">Insulin Level In Blood (mu U/ml)</label>
-					<input class ="form-control" id="Insulin" type="number" value="0">
+					<label for="Insulin">혈중 인슐린 수치(mu U/ml)</label>
+					<input class ="form-control" id="Insulin" type="number" value="0" required>
+					<div class="invalid-feedback col-5" id ="validInsulin">혈중 인슐린 수치를 입력하세요</div>
 				</div>
 			</div>
-			<div class="mt-1 row">
+			<div class="mt-2 row">
 				<div class="col-10" id ="target">
-					<label for="BMI">BMI Figure</label>
-					<input class ="form-control" id="BMI" type="number" value="0">
+					<label for="BMI">BMI 지수</label>
+					<input class ="form-control" id="BMI" type="number" value="0" required>
+					<div class="invalid-feedback col-5" id ="validBMI">BMI 지수를 입력하세요</div>
 				</div>
 				<div class="col-2 pt-4">
-					<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#calculateBMI">Calculate</button>
+					<button class="btn btn-success btn-lg" data-toggle="modal" data-target="#calculateBMI">계산하기</button>
 				</div>
 			</div>
 		</div>
 		<div class="col-5">
 				<div class="row">
-					<h1 id="resultLabel">Your Result</h1>
+					<h1 id="resultLabel">결과</h1>
 				</div>
 				<div class="row mt-4 mr-4">
-					<textarea  id="textArea" rows="8"  class="form-control" readonly>Probability Of You Getting Diabetes</textarea>
+					<textarea  id="textArea" rows="8"  class="form-control" readonly>당뇨병에 걸릴 확률</textarea>
 				</div>
 				<div class="row mt-4 mr-4" id ="go">
 					<button class="btn btn-primary btn-lg btn-block">Go</button>
@@ -82,30 +89,30 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Calculate BMI</h5>
+              <h5 class="modal-title" id="exampleModalLongTitle">BMI지수 계산</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
               <div class="modal-body">
                 <div class="form-group">
-                  <label for="height">Height (cm)</label>
-                  <input type="number" class="form-control" id="height"  placeholder="Input Your Height" required>
+                  <label for="height">키 (cm)</label>
+                  <input type="number" class="form-control" id="height"  placeholder="키를 입력 해 주세요" required>
                   <div class="invalid-feedback col-5" id ="validheight">
-						Please Input Your Height
+						키를 입력하지 않았습니다.
 				 </div>
                 </div>
                 <div class="form-group">
-                  <label for="weight">Weight (kg)</label>
-                  <input type="number" class="form-control" id="weight"  placeholder="Input Your Weight" required>
+                  <label for="weight">몸무게 (kg)</label>
+                  <input type="number" class="form-control" id="weight"  placeholder="몸무게를 입력 해 주세요" required>
                   <div class="invalid-feedback col-5" id ="validweight">
-						Please Input Your Weight
+						몸무게를 입력하지 않았습니다.
 				 </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id ="modalClose">Close</button>
-                <button onclick ='calculate()' id="calculate"  class="btn btn-primary">Calculate</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id ="modalClose">취소</button>
+                <button onclick ='calculate()' id="calculate"  class="btn btn-primary">계산하기</button>
               </div>
           </div>
         </div>

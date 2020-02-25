@@ -4,6 +4,15 @@
 
 $("#go").click(function(){ 
 		
+	$('#validAge').hide();
+	$('#validGlucose').hide();
+	$('#validBloodPressure').hide();
+	$('#validSkinThickness').hide();
+	$('#validInsulin').hide();
+	$('#validBMI').hide();
+	
+	
+	
 		var data = {
 				Pregnancies : $('#Pregnancies').val(),
 				Glucose : $('#Glucose').val(),
@@ -15,21 +24,62 @@ $("#go").click(function(){
 				
 		}
 		
+		if(data.Age == 0 || data.Glucose == 0 || data.BloodPressure == 0 || data.SkinThickness == 0 || data.Insulin == 0 || 
+				data.BMI == 0)
+		{
+			
+			if(data.Age == 0)
+			{
+				$('#validAge').show();
+			}
+			
+			if(data.Glucose == 0)
+			{
+				$('#validGlucose').show();
+			}
+			
+			if(data.BloodPressure == 0)
+			{
+				$('#validBloodPressure').show();
+			}
+			
+			if(data.SkinThickness == 0)
+			{
+				$('#validSkinThickness').show();
+			}
+			
+			if(data.Insulin == 0)
+			{
+				$('#validInsulin').show();
+			}
+			
+			if(data.BMI == 0)
+			{
+				$('#validBMI').show();
+			}
+		}
+		else
+		{
+			JSON.stringify(data);
+			console.log(data);
+			$.ajax({
+		        type: "GET",
+		        dataType: "jsonp",
+		        data : data,
+		        url: "http://localhost:5000/diabetes",
+		        success: function (data) {
+		        	
+		        	var result = data.odd +"%";
+		        	$('#textArea').empty();
+		        	$('#textArea').append(result);
+		            
+		        }
+		    });
+			
+			
+		}
 		
-		JSON.stringify(data);
-		console.log(data);
-		$.ajax({
-	        type: "GET",
-	        dataType: "jsonp",
-	        data : data,
-	        url: "http://localhost:5000/diabetes",
-	        success: function (data) {
-	        	var result = data.odd +"%";
-	        	$('#textArea').empty();
-	        	$('#textArea').append(result);
-	            
-	        }
-	    });
+		
 }); 
 
 
@@ -60,7 +110,7 @@ function calculate(){
 		$('#modalClose').click();
 		$('#target').empty();
 		
-		var html = "<label for='BMI'>BMI Figure</label>" +
+		var html = "<label for='BMI'>BMI 지수</label>" +
 					"<input class = 'form-control' id='BMI' type='number' value='" + BMI + "'>";
 		
 		$('#target').append(html);
