@@ -19,168 +19,128 @@
 
     <div>
         <img src="./img/heart-disease.jpg" style="width: auto; height: 200px; display: inline;" alt="">
-        <div class="lead">Heart disease describes a range of conditions that affect your heart.
-            Diseases under the heart
-            disease umbrella
-            include blood vessel diseases, such as coronary artery disease; heart rhythm problems (arrhythmias); and
-            heart
-            defects you're born with (congenital heart defects), among others.
+        <div class="lead mt-3" id ="subject">심장병은 당신의 심장에 영향을 미치는 다양한 상태를 묘사한다.<br>
+     		  심장 질병으로는 관상동맥질환, 심장박동 장애, 선천적으로 생긴 심장결함 등이 있다.
             <br/>
             <br/>
-            The term "heart disease" is often used interchangeably with the term
-            "cardiovascular disease." Cardiovascular
-            disease generally refers to conditions that involve narrowed or blocked blood vessels that can lead to a
-            heart
-            attack, chest pain (angina) or stroke. Other heart conditions, such as those that affect your heart's
-            muscle,
-            valves
-            or rhythm, also are considered forms of heart disease.
+         	   심장병이라는 용어는 흔히 심혈관 질환이라는 용어와 서로 바꾸어 쓰이고 있다. <br>
+         	   심혈관 질환은 일반적으로 심근경색, 흉통 또는 뇌졸중을 일으킬 수 있는 혈관이 좁아지거나 막히는 상태를 말한다. <br>
+         	   심장 근육, 판막 또는 리듬에 영향을 주는 것과 같은 다른 심장 질환도 심장병의 일종으로 간주된다. <br>
         </div>
     </div>
     <hr class="my-4">
-    <div class="row" style="text-align: center; margin: 0 auto;">
+    <div class="row ml-4 mb-3" id ="predNm" style="text-align: center; margin: 0 auto;">
         <div class="col-5" style="text-align: center; border: 1px solid black; padding: 30px 0;">
-            <h3>We can predict your heart disease incidence!</h3>
-            <a style="margin-top: 30px;" class="btn btn-primary btn-lg" onclick="heartDiseasePredict()" role="button">PREDICTION</a>
+            <h3>관상 동맥 심장병 발생 확률 예측</h3>
+            <button style="margin-top: 30px;" class="btn btn-primary btn-lg" onclick="heartDiseasePredict()">Predict</button>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5" style="text-align: center; border: 1px solid black; padding: 30px 0;">
+            <h3>심혈관 질환 발생 확률 예측</h3>
+            <button style="margin-top: 30px;" class="btn btn-primary btn-lg" onclick="heartDiseasePredict2()" role="button">Predict</button>
         </div>
     </div>
     <div id="E_WRAP">
         <div id="FAQ" class="E_FAQ" style="background-color:white;">
-            <div class="E_HeadLine">Types of Heart disease</div>
-            <div class="E_TextArea">There are many types of heart disease that affect different parts of the organ and
-                occur in different ways.
+            <div class="E_HeadLine">심장병의 종류</div>
+            <div class="E_TextArea">여러 종류의 심장질환이 있는데, 이 질환은 장기마다 다른 부위에 영향을 미치고 다른 방식으로 발생한다.
             </div>
             <div class="E_QList">
                 <li>
-                    <label class="E_Question1" for="E_Opener1">Congenital heart disease<span
+                    <label class="E_Question1" for="E_Opener1">선천성 심장병<span
                             class="E_plus">+</span></label>
                     <input class="E_Opener1" type="checkbox" id="E_Opener1">
-                    <div class="E_Answer1">
-                        This is a general term for some deformities of the heart that have been
-                        present since birth. Examples include:
-                        <br/>
-                        Septal defects: There is a hole between the two chambers of the heart.
-                        Obstruction defects: The flow of blood through various chambers of the heart is partially or
-                        totally blocked.
-                        Cyanotic heart disease: A defect in the heart causes a shortage of oxygen around the body.
+                    <div class="E_Answer1 mb-4">
+                    <br/>
+                  	      이것은 태어날 때부터 존재해 온 심장의 일부 기형들을 총칭하는 말이다.<br>
+                  	      <br/>
+						예를 들면 다음과 같다.<br>
+						<br/>
+						격막의 결함: 심장의 두 방 사이에는 구멍이 있다.<br>
+						차단 결함: 심장의 여러 방을 통과하는 혈액의 흐름은 부분적으로 또는 완전히 차단된다. <br>
+						청색증 심장병: 심장에 이상이 생기면 몸 주위에 산소가 부족하게 된다. <br>
+						<br/>
                     </div>
 
                 </li>
                 <li>
-                    <label class="E_Question2" for="E_Opener2">Arrhythmia<span
+                    <label class="E_Question2" for="E_Opener2">부정맥의 불규칙한 심장 박동<span
                             class="E_plus">+</span></label>
                     <input class="E_Opener2" type="checkbox" id="E_Opener2">
-                    <div class="E_Answer2">Arrhythmia is an irregular heartbeat.<br/>
+                    <div class="E_Answer2 mb-4">
+                    	<br/>
+                      	  심장 박동이 규칙적인 리듬을 잃을 수 있는 몇 가지 원인이 있다. <br>
+                      	  <br/>
+                      	  여기에는 다음이 포함된다.
                         <br/>
-                        There are several ways in which a heartbeat can lose its regular rhythm. These include:<br/>
                         <br/>
-                        - tachycardia, when the heart beats too fast<br/>
-                        - bradycardia, when the heart beats too slowly<br/>
-                        - premature ventricular contractions, or additional, abnormal beats<br/>
-                        - fibrillation, when the heartbeat is irregular<br/>
+                        - 심장의 박동이 너무 빠를 때 빈맥(Tachcardia)<br/>
+                        - 심장박동이 너무 느릴 때<br/>
+                        - 심실수축 또는 추가적인 비정상 박동수<br/>
+                        - 심박동수가 불규칙할 때 
                         <br/>
-                        Arrhythmias occur when the electrical impulses in the heart that coordinate the heartbeat do not<br/>
-                        work properly. These make the heart beat in a way it should not, whether that be too fast,
-                        too<br/>
-                        slowly, or too erratically.<br/>
                         <br/>
-                        Irregular heartbeats are common, and all people experience them. They feel like a fluttering
-                        or<br/>
-                        a racing heart. However, when they change too much or occur because of a damaged or weak
-                        heart,<br/>
-                        they need to be taken more seriously and treated.<br/>
-                        <br/>
-                        Arrhythmias can become fatal.<br/>
+                       		심장의 전기적 자극이 제대로 작동하지 않을 때 비정상적인 심박동수가 발생한다. <br>
+                       		이것들은 심장이 너무 빠르든, 너무 느리든, 혹은 너무 불규칙적이든 하지 말아야 할 방식으로 뛰게 만든다.<br>
+							불규칙한 심장박동은 흔하며, 모든 사람들이 그것을 경험한다. <br>
+							 하지만, 그것이 너무 잦거나 손상된 심장과 약한 심장으로 인해 발생한다면, 그것들은 더 심각하게 받아들여지고 치료될 필요가 있다.<br>
                     </div>
 
                 </li>
                 <li>
-                    <label class="E_Question3" for="E_Opener3">Coronary artery disease<span
+                    <label class="E_Question3" for="E_Opener3">관상 동맥 질환<span
                             class="E_plus">+</span></label>
                     <input class="E_Opener3" type="checkbox" id="E_Opener3">
-                    <div class="E_Answer3">The coronary arteries supply the heart muscle with nutrients and oxygen by
-                        circulating blood.<br/>
+                    <div class="E_Answer3 mb-4">
+                    	<br/>
+                    	관상동맥은 혈액 순환에 의해 심장 근육에 영양분과 산소를 공급한다.<br/>
                         <br/>
-                        Coronary arteries can become diseased or damaged, usually because of plaque deposits that
-                        contain cholesterol. Plaque buildup narrows the coronary arteries, and this causes the heart to
-                        receive less oxygen and nutrients.
+                        <br/>
+                  		      관상동맥은 보통 콜레스테롤이 함유된 플라그 퇴적물 때문에 병들거나 손상될 수 있다. <br>
+                  		      플라그 축적은 관상동맥의 범위를 좁히고, 이것은 심장이 산소와 영양소를 적게 섭취하는 원인이 된다.
                     </div>
 
                 </li>
                 <li>
-                    <label class="E_Question4" for="E_Opener4">Dilated cardiomyopathy<span E_plus>+</span></label>
+                    <label class="E_Question4" for="E_Opener4">통기성 심근증<span E_plus>+</span></label>
                     <input class="E_Opener4" type="checkbox" id="E_Opener4">
-                    <div class="E_Answer4">The heart chambers become dilated as a result of heart muscle weakness and
-                        cannot pump blood properly. The most common reason is that not enough oxygen reaches the heart
-                        muscle, due to coronary artery disease. This usually affects the left ventricle.
+                    <div class="E_Answer4 mb-4">
+                    	<br>
+                    	심실은 심장 근육의 약화로 인해 팽창되어 혈액을 제대로 펌프질할 수 없다. <br>
+                    	가장 흔한 이유는 관상동맥 질환으로 인해 심근에 충분한 산소가 공급되지 않기 때문이다. <br>
+                    	이것은 보통 좌심실에 영향을 미친다.<br>
                     </div>
 
                 </li>
                 <li>
-                    <label class="E_Question5" for="E_Opener5">Myocardial infarction<span
+                    <label class="E_Question5" for="E_Opener5">심근경색<span
                             class="E_plus">+</span></label>
                     <input class="E_Opener5" type="checkbox" id="E_Opener5">
-                    <div class="E_Answer5">This is also known as a heart attack, cardiac infarction, and coronary
-                        thrombosis. An interrupted blood flow damages or destroys part of the heart muscle. This is
-                        usually caused by a blood clot that develops in one of the coronary arteries and can also occur
-                        if an artery suddenly narrows or spasms.
+                    <div class="E_Answer5 mb-4">
+                    <br>
+                    	이것은 심장마비, 심근경색, 관상동맥혈전이라고도 한다. <br>
+                    	 혈액의 흐름이 중단되면 심장 근육의 일부가 손상되거나 파괴된다. <br>
+                    	이것은 보통 관상동맥 중 하나에서 발육하는 혈전에 의해 발생하며 동맥이 갑자기 좁아지거나 경련될 때도 발생할 수 있다.<br>
 
                     </div>
 
                 </li>
                 <li>
-                    <label class="E_Question6" for="E_Opener6">Heart failure<span class="E_plus">+</span></label>
+                    <label class="E_Question6" for="E_Opener6">심부전<span class="E_plus">+</span></label>
                     <input class="E_Opener6" type="checkbox" id="E_Opener6">
-                    <div class="E_Answer6">Also known as congestive heart failure, heart failure occurs when the heart
-                        does not pump blood around the body efficiently.<br/>
-                        <br/>
-                        The left or right side of the heart might be affected. Rarely, both sides are. Coronary artery
-                        disease or high blood pressure can, over time, leave the heart too stiff or weak to fill and
-                        pump properly.
-
+                    <div class="E_Answer6 mb-4">
+                    			<br>울혈성 심부전으로도 알려진 심부전은 심장이 효율적으로 몸 주위에 혈액을 펌프질하지 않을 때 발생한다.<br/>
+							<br/>심장의 왼쪽이나 오른쪽이 영향을 받을 수도 있다.
+							<br>드물지만, 양쪽 모두 그런 경우도 있다.
+							<br>관상동맥 질환이나 고혈압은 시간이 흐르면서 심장을 너무 뻣뻣하게 하거나 약하게 놔둬서 제대로 채우고 펌프질할 수 없다.
                     </div>
-
                 </li>
                 <li>
-                    <label class="E_Question7" for="E_Opener7">Hypertrophic cardiomyopathy<span class="E_plus">+</span></label>
+                    <label class="E_Question7" for="E_Opener7">과로성 심근증<span class="E_plus">+</span></label>
                     <input class="E_Opener7" type="checkbox" id="E_Opener7">
-                    <div class="E_Answer7">This is a genetic disorder in which the wall of the left ventricle thickens,
-                        making it harder for blood to be pumped out of the heart. This is the leading cause of sudden
-                        death in athletes. A parent with hypertrophic cardiomyopathy has a 50 percent chance of passing
-                        the disorder on to their children.
-                    </div>
-                </li>
-                <li>
-                    <label class="E_Question8" for="E_Opener8">Mitral regurgitation<span class="E_plus">+</span></label>
-                    <input class="E_Opener8" type="checkbox" id="E_Opener8">
-                    <div class="E_Answer8">Also known as mitral valve regurgitation, mitral insufficiency, or mitral
-                        incompetence, this occurs when the mitral valve in the heart does not close tightly enough. This
-                        allows blood to flow back into the heart when it should leave. As a result, blood cannot move
-                        through the heart or the body efficiently.<br/>
-                        <br/>
-                        People with this type of heart condition often feel tired and out of breath.
-                    </div>
-                </li>
-                <li>
-                    <label class="E_Question9" for="E_Opener9">Mitral valve prolapse<span
-                            class="E_plus">+</span></label>
-                    <input class="E_Opener9" type="checkbox" id="E_Opener9">
-                    <div class="E_Answer9">The valve between the left atrium and left ventricle does not fully close, it
-                        bulges upwards, or back into the atrium. In most people, the condition is not life-threatening,
-                        and no treatment is required. Some people, especially if the condition is marked by mitral
-                        regurgitation, may require treatment.
-                    </div>
-                </li>
-                <li>
-                    <label class="E_Question10" for="E_Opener10">Pulmonary stenosis<span class="E_plus">+</span></label>
-                    <input class="E_Opener10" type="checkbox" id="E_Opener10">
-                    <div class="E_Answer10">It becomes hard for the heart to pump blood from the right ventricle into
-                        the pulmonary artery because the pulmonary valve is too tight. The right ventricle has to work
-                        harder to overcome the obstruction. An infant with severe stenosis can turn blue. Older children
-                        will generally have no symptoms.<br/>
-                        <br/>
-                        Treatment is needed if the pressure in the right ventricle is too high, and a balloon
-                        valvuloplasty or open-heart surgery may be performed to clear an obstruction.
+                    <div class="E_Answer7 mb-4"><br>이것은 좌심실의 벽이 두꺼워져서 심장에서 피가 나오기가 더 힘들어지는 유전적 질환이다. <br>
+                    	이것이 운동선수들의 갑작스런 사망의 주요 원인이다.<br>
+                     	과로성 심근증을 가진 부모는 그들의 아이들에게 장애를 물려줄 확률이 50%이다.<br>
                     </div>
                 </li>
             </div>
