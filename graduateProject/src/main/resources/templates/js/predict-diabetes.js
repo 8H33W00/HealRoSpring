@@ -60,15 +60,22 @@ $("#go").click(function(){
 		}
 		else
 		{
+			$('#go').empty();
+			var html = "<button class='btn btn-warning btn-lg btn-block'>Loading</button>"
+			$('#go').append(html);
+			
 			JSON.stringify(data);
 			console.log(data);
 			$.ajax({
+				
 		        type: "GET",
 		        dataType: "jsonp",
 		        data : data,
 		        url: "http://localhost:5000/diabetes",
 		        success: function (data) {
-		        	
+		        	$('#go').empty();
+					var html = "<button class='btn btn-primary btn-lg btn-block'>Go</button>"
+					$('#go').append(html);
 		        	var result = data.odd +"%";
 		        	$('#textArea').empty();
 		        	$('#textArea').append(result);

@@ -1,5 +1,9 @@
 $("#go").click(function(){ 
 		
+	
+	
+	
+	
 	$('#validAge').hide();
 	$('#validSex').hide();
 	$('#validBloodPressure').hide();
@@ -9,6 +13,7 @@ $("#go").click(function(){
 	$('#validActive').hide();
 	$('#validGlucose').hide();
 	$('#validBMI').hide();
+	
 	
 		var data = {
 				Sex : $('#Sex').val(),
@@ -72,6 +77,9 @@ $("#go").click(function(){
 		}
 		else
 		{
+			$('#go').empty();
+			var html = "<button class='btn btn-warning btn-lg btn-block'>Loading</button>"
+			$('#go').append(html);
 			
 			JSON.stringify(data);
 			console.log(data);
@@ -81,7 +89,10 @@ $("#go").click(function(){
 		        data : data,
 		        url: "http://localhost:5000/heartDisease2",
 		        success: function (data) {
-		        	
+		        	$('#go').empty();
+					var html = "<button class='btn btn-primary btn-lg btn-block'>Go</button>"
+					$('#go').append(html);
+					
 		        	var result = data.odd +"%";
 		        	$('#textArea').empty();
 		        	$('#textArea').append(result);
