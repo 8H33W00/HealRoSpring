@@ -71,7 +71,7 @@ $("#go").click(function(){
 		        type: "GET",
 		        dataType: "jsonp",
 		        data : data,
-		        url: "http://localhost:5000/diabetes",
+		        url: "http://3.16.17.117:5000/diabetes",
 		        success: function (data) {
 		        	$('#go').empty();
 					var html = "<button class='btn btn-primary btn-lg btn-block'>Go</button>"
