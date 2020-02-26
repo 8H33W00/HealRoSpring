@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="adc0bb61-5112-49a9-ac05-6aa74b748e48" name="Default Changelist" comment="" />
+    <list default="true" id="adc0bb61-5112-49a9-ac05-6aa74b748e48" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/graduateProject/src/main/resources/templates/vascular-disease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduateProject/bin/main/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduateProject/bin/main/com/health/GraduateProjectApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduateProject/bin/main/templates/heart-disease.html" beforeDir="false" afterPath="$PROJECT_DIR$/graduateProject/bin/main/templates/heart-disease.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduateProject/src/main/java/com/health/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduateProject/src/main/java/com/health/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduateProject/src/main/resources/templates/heart-disease.html" beforeDir="false" afterPath="$PROJECT_DIR$/graduateProject/src/main/resources/templates/heart-disease.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +61,8 @@
       <updated>1580569417690</updated>
       <workItem from="1580569424502" duration="3957000" />
       <workItem from="1581167157802" duration="10227000" />
+      <workItem from="1582545116907" duration="1553000" />
+      <workItem from="1582602238516" duration="11184000" />
     </task>
     <servers />
   </component>
@@ -68,9 +78,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="922" y="163" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581167598252" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581224094465">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582701988758">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581224094465" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582701988758" />
   </component>
 </project>
