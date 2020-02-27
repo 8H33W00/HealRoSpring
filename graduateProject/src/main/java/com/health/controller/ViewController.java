@@ -16,6 +16,15 @@ public class ViewController {
 		return mv;
 	}
 	
+
+	@GetMapping("/vascular")
+	public ModelAndView vascular()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("vascular-disease");
+		return mv;
+	}
+	
 	@GetMapping("/diabetes")
 	public ModelAndView diabetes()
 	{

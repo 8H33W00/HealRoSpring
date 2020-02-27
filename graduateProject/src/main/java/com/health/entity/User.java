@@ -17,15 +17,3 @@ public class User {
 
 }
 
-public class Odd {
-	
-	@Id
-	String userNickname;
-	
-	float heartDisease;
-	float diabetes;
-	float breastCancer;
-	float brainDisease;
-	float vascularDisease;
-	
-}
