@@ -1,9 +1,6 @@
 $("#go").click(function(){ 
 		
 	
-	
-	
-	
 	$('#validAge').hide();
 	$('#validSex').hide();
 	$('#validBloodPressure').hide();
