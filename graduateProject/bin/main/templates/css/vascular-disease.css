@@ -1,0 +1,32 @@
+.summary {
+    padding-bottom: 20px;
+}
+
+#explain1 {
+    font-size: 1.3em;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 40px;
+    padding: 20px;
+}
+
+.graph {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#explain2 {
+    padding: 20px;
+}
+
+#explain2 h2 {
+    text-align: center;
+}
+
+#explain2 ul {
+    font-size: 1.2em;
+    list-style: square;
+}
+#explain2 ul li {
+    font-size: 1.2em;
+}
