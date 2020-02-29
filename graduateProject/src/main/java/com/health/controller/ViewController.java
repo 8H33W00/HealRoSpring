@@ -16,15 +16,6 @@ public class ViewController {
 		return mv;
 	}
 	
-
-	@GetMapping("/vascular")
-	public ModelAndView vascular()
-	{
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("vascular-disease");
-		return mv;
-	}
-	
 	@GetMapping("/diabetes")
 	public ModelAndView diabetes()
 	{
@@ -55,16 +46,6 @@ public class ViewController {
 		
 	}
 	
-	@GetMapping("/predictHeartDisease2")
-	public ModelAndView predictHeartDisease2()
-	{
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("predict-heart-disease2");
-		return mv;
-		
-	}
-	
-	
 	@GetMapping("/predictDiabetes")
 	public ModelAndView predictDiabetes()
 	{
@@ -88,5 +69,45 @@ public class ViewController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("mypage");
 		return mv;
+	}
+	@GetMapping("/mypage_heart")
+	public ModelAndView mypageHeart()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mypage_heart");
+		return mv;
+		
+	}
+	@GetMapping("/mypage_diabetes")
+	public ModelAndView mypageDiabetes()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mypage_diabetes");
+		return mv;
+		
+	}
+	@GetMapping("/mypage_breast")
+	public ModelAndView mypageBreast()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mypage_breast");
+		return mv;
+		
+	}
+	@GetMapping("/mypage_brain")
+	public ModelAndView mypageBrain()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mypage_brain");
+		return mv;
+		
+	}
+	@GetMapping("/mypage_vascular")
+	public ModelAndView mypageVascular()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mypage_vascular");
+		return mv;
+		
 	}
 }
