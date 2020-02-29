@@ -10,211 +10,75 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/disease.css">
+    <link rel="stylesheet" href="./css/vascular-disease.css">
 </head>
 <body>
 <div class="container">
     <div th:replace="./common/topbar :: topbar"></div>
     <div class="jumbotron">
         <h1 class="display-4">Vascular disease</h1>
-        <hr class="my-4">
 
-        <div class="row">
-            <div class="card">
-                <div class="row no-gutters">
-                    <div class="col-4">
-                        <img src="./img/vascular-disease.jpg" alt="" class="card-img"/>
-                    </div>
-                    <div class="col-8" style="width: 70%; padding-left: 10px; background-color: white; border: 1px solid black;">
-                        <div class="card-body">
-                            <p class="card-text">동맥경화를 못 들어본 사람은 없을 것입니다. 그렇지만 어떤 병이냐고 물으면, 잘 설명할 수 없을지도 모릅니다. 동맥 경화란, 알기 쉽게 말하면 혈관의
-                노화입니다. 피부에 주름 또는 얼룩이 생기고 피부가 쳐지는 것처럼, 혈관도 연령과 함께 다치고 약해지며, 유연함도 저하됩니다. 단지 피부의 노화와 다른 것은
-                생명과 관계되는 노화라는 것입니다. 외관상으로는 알 수 없기 때문에 대부분의 사람이 혈관의 노화는 깨닫지 못하고 방치해 두고 있습니다. 그 결과, 혈액이 가는
-                길이 좁아지거나 혈전이 생겨 혈관이 꽉 차, 어느 날 갑자기 심근경색이나 뇌졸중이라는 심각한 병을 일으킵니다.</p>
-                        </div>
-                    </div>
-                </div>
+
+        <hr class="my-4">
+        <div class="summary row mt-3 ml-3">
+            <div class="col-5">
                 <div class="row">
-                    <div class="col-12">
-                        <img src="./img/vascular_graph.jpg" alt="">
+                    <iframe width="600" height="300" src="https://www.youtube.com/embed/D8Pona5CRtQ" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="row mt-4">
+                    <div class="mt-4">
+                        <h2 class="ml-4">혈관질환 발생 확률 예측</h2>
                     </div>
-
+                </div>
+                <div class="row mt-3 mr-3">
+                    <button class="btn btn-primary btn-lg btn-block" onclick="">Predict</button>
                 </div>
             </div>
-        </div>
-        <hr class="my-4">
-        <div class="row" style="text-align: center; margin: 0 auto;">
-            <div class="col-5" style="text-align: center; border: 1px solid black; padding: 30px 0;">
-                <h3>We can predict your heart disease incidence!</h3>
-                <a style="margin-top: 30px;" class="btn btn-primary btn-lg" onclick="heartDiseasePredict()"
-                   role="button">PREDICTION</a>
+            <div class="col-6" id="explain1">
+                동맥경화를 못 들어본 사람은 없을 것입니다. 그렇지만 어떤 병이냐고 물으면, 잘 설명할 수 없을지도 모릅니다. 동맥 경화란, 알기 쉽게 말하면 혈관의 노화입니다. 피부에 주름 또는 얼룩이
+                생기고 피부가 쳐지는 것처럼, 혈관도 연령과 함께 다치고 약해지며, 유연함도 저하됩니다. 단지 피부의 노화와 다른 것은 생명과 관계되는 노화라는 것입니다. 외관상으로는 알 수 없기 때문에
+                대부분의 사람이 혈관의 노화는 깨닫지 못하고 방치해 두고 있습니다. 그 결과, 혈액이 가는 길이 좁아지거나 혈전이 생겨 혈관이 꽉 차, 어느 날 갑자기 심근경색이나 뇌졸중이라는 심각한
+                병을 일으킵니다.
             </div>
         </div>
-        <div id="E_WRAP">
-            <div id="FAQ" class="E_FAQ" style="background-color:white;">
-                <div class="E_HeadLine">Types of Heart disease</div>
-                <div class="E_TextArea">There are many types of heart disease that affect different parts of the organ
-                    and
-                    occur in different ways.
+
+        <hr>
+        <div class="graph">
+            <br />
+            <h2>관상동맥질환 사망률</h2>
+            <br />
+            <img src="img/graph.jpg" width="1000px" alt="">
+        </div>
+
+        <hr>
+        <div class="row ml-2">
+            <div class="mt-4" id="explain2">
+                <h2 class="mt-4">혈관질환 초기증상</h2>
+                <ul class="mt-4" style="font-size: 1.2em; list-style: square">
+                    <li>냉감과 저림</li>
+                    <p>체내 콜레스테롤이 쌓여 혈관질환이 생기면 심장에서부터 먼 손 끝이나 발 끝부터 차가워지거나 피가 잘 통하지 않아 저리는 현상이 발생하게 됩니다. 이 증상이 더 악화되어 혈관이
+                        막히고 피가 순환되지 않으면 괴사의 위험까지 있어 매우 위험합니다.</p>
+                    <li>빨간 눈 흰자위</li>
+                    <p>혈관질환의 증상은 눈의 흰자위 색깔로도 알 수 있는데요. 눈의 흰자위에는 아주 많은 모세혈관이 있습니다. 이 모세혈관이 터져 빨갛게 되어 증상이 오래 간다면 고혈압을 의심할
+                        수 있습니다.</p>
+                    <li>다크서클</li>
+                    <p>사실 다크서클은 피곤해서 생기는 것이 아닌 눈 및 모세혈관의 순환 장애로 생기는 것입니다. 눈 및 피하정맥이 순환되지 않고 정체되어 색이 검게 보이는 것으로 이 역시 혈관질환
+                        증상 중 하나라고 볼 수 있습니다.
+
+                    </p>
+                </ul>
+            </div>
+            <div class="col-7">
+                <div>
+
                 </div>
-                <div class="E_QList">
-                    <li>
-                        <label class="E_Question1" for="E_Opener1">Congenital heart disease<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener1" type="checkbox" id="E_Opener1">
-                        <div class="E_Answer1">
-                            This is a general term for some deformities of the heart that have been
-                            present since birth. Examples include:
-                            <br/>
-                            Septal defects: There is a hole between the two chambers of the heart.
-                            Obstruction defects: The flow of blood through various chambers of the heart is partially or
-                            totally blocked.
-                            Cyanotic heart disease: A defect in the heart causes a shortage of oxygen around the body.
-                        </div>
 
-                    </li>
-                    <li>
-                        <label class="E_Question2" for="E_Opener2">Arrhythmia<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener2" type="checkbox" id="E_Opener2">
-                        <div class="E_Answer2">Arrhythmia is an irregular heartbeat.<br/>
-                            <br/>
-                            There are several ways in which a heartbeat can lose its regular rhythm. These include:<br/>
-                            <br/>
-                            - tachycardia, when the heart beats too fast<br/>
-                            - bradycardia, when the heart beats too slowly<br/>
-                            - premature ventricular contractions, or additional, abnormal beats<br/>
-                            - fibrillation, when the heartbeat is irregular<br/>
-                            <br/>
-                            Arrhythmias occur when the electrical impulses in the heart that coordinate the heartbeat do
-                            not<br/>
-                            work properly. These make the heart beat in a way it should not, whether that be too fast,
-                            too<br/>
-                            slowly, or too erratically.<br/>
-                            <br/>
-                            Irregular heartbeats are common, and all people experience them. They feel like a fluttering
-                            or<br/>
-                            a racing heart. However, when they change too much or occur because of a damaged or weak
-                            heart,<br/>
-                            they need to be taken more seriously and treated.<br/>
-                            <br/>
-                            Arrhythmias can become fatal.<br/>
-                        </div>
-
-                    </li>
-                    <li>
-                        <label class="E_Question3" for="E_Opener3">Coronary artery disease<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener3" type="checkbox" id="E_Opener3">
-                        <div class="E_Answer3">The coronary arteries supply the heart muscle with nutrients and oxygen
-                            by
-                            circulating blood.<br/>
-                            <br/>
-                            Coronary arteries can become diseased or damaged, usually because of plaque deposits that
-                            contain cholesterol. Plaque buildup narrows the coronary arteries, and this causes the heart
-                            to
-                            receive less oxygen and nutrients.
-                        </div>
-
-                    </li>
-                    <li>
-                        <label class="E_Question4" for="E_Opener4">Dilated cardiomyopathy<span E_plus>+</span></label>
-                        <input class="E_Opener4" type="checkbox" id="E_Opener4">
-                        <div class="E_Answer4">The heart chambers become dilated as a result of heart muscle weakness
-                            and
-                            cannot pump blood properly. The most common reason is that not enough oxygen reaches the
-                            heart
-                            muscle, due to coronary artery disease. This usually affects the left ventricle.
-                        </div>
-
-                    </li>
-                    <li>
-                        <label class="E_Question5" for="E_Opener5">Myocardial infarction<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener5" type="checkbox" id="E_Opener5">
-                        <div class="E_Answer5">This is also known as a heart attack, cardiac infarction, and coronary
-                            thrombosis. An interrupted blood flow damages or destroys part of the heart muscle. This is
-                            usually caused by a blood clot that develops in one of the coronary arteries and can also
-                            occur
-                            if an artery suddenly narrows or spasms.
-
-                        </div>
-
-                    </li>
-                    <li>
-                        <label class="E_Question6" for="E_Opener6">Heart failure<span class="E_plus">+</span></label>
-                        <input class="E_Opener6" type="checkbox" id="E_Opener6">
-                        <div class="E_Answer6">Also known as congestive heart failure, heart failure occurs when the
-                            heart
-                            does not pump blood around the body efficiently.<br/>
-                            <br/>
-                            The left or right side of the heart might be affected. Rarely, both sides are. Coronary
-                            artery
-                            disease or high blood pressure can, over time, leave the heart too stiff or weak to fill and
-                            pump properly.
-
-                        </div>
-
-                    </li>
-                    <li>
-                        <label class="E_Question7" for="E_Opener7">Hypertrophic cardiomyopathy<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener7" type="checkbox" id="E_Opener7">
-                        <div class="E_Answer7">This is a genetic disorder in which the wall of the left ventricle
-                            thickens,
-                            making it harder for blood to be pumped out of the heart. This is the leading cause of
-                            sudden
-                            death in athletes. A parent with hypertrophic cardiomyopathy has a 50 percent chance of
-                            passing
-                            the disorder on to their children.
-                        </div>
-                    </li>
-                    <li>
-                        <label class="E_Question8" for="E_Opener8">Mitral regurgitation<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener8" type="checkbox" id="E_Opener8">
-                        <div class="E_Answer8">Also known as mitral valve regurgitation, mitral insufficiency, or mitral
-                            incompetence, this occurs when the mitral valve in the heart does not close tightly enough.
-                            This
-                            allows blood to flow back into the heart when it should leave. As a result, blood cannot
-                            move
-                            through the heart or the body efficiently.<br/>
-                            <br/>
-                            People with this type of heart condition often feel tired and out of breath.
-                        </div>
-                    </li>
-                    <li>
-                        <label class="E_Question9" for="E_Opener9">Mitral valve prolapse<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener9" type="checkbox" id="E_Opener9">
-                        <div class="E_Answer9">The valve between the left atrium and left ventricle does not fully
-                            close, it
-                            bulges upwards, or back into the atrium. In most people, the condition is not
-                            life-threatening,
-                            and no treatment is required. Some people, especially if the condition is marked by mitral
-                            regurgitation, may require treatment.
-                        </div>
-                    </li>
-                    <li>
-                        <label class="E_Question10" for="E_Opener10">Pulmonary stenosis<span
-                                class="E_plus">+</span></label>
-                        <input class="E_Opener10" type="checkbox" id="E_Opener10">
-                        <div class="E_Answer10">It becomes hard for the heart to pump blood from the right ventricle
-                            into
-                            the pulmonary artery because the pulmonary valve is too tight. The right ventricle has to
-                            work
-                            harder to overcome the obstruction. An infant with severe stenosis can turn blue. Older
-                            children
-                            will generally have no symptoms.<br/>
-                            <br/>
-                            Treatment is needed if the pressure in the right ventricle is too high, and a balloon
-                            valvuloplasty or open-heart surgery may be performed to clear an obstruction.
-                        </div>
-                    </li>
-                </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <script th:inline="javascript">
