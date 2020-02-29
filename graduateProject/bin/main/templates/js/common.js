@@ -33,18 +33,6 @@ function heartDiseasePredict()
 	}
 }
 
-function heartDiseasePredict2()
-{
-	if(userNickName != null)
-	{
-		getView('predictHeartDisease2');
-	}
-	else
-	{
-		getView('login');
-	}
-}
-
 
 function diabetesPredict()
 {

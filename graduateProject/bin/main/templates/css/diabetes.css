@@ -1,26 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
-@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
-
-
-label{
-	font-size: 25px;
-}
 
 #explain{
-	font-family: 'Jeju Myeongjo', serif;
+	font-family: 'Sriracha', cursive;
 	background-color: white;
 	border-radius: 10px;
 }
 
 #explain2{
-	font-family: 'Hanna', serif;
+	font-family: 'Sriracha', cursive;
 	font-size: 20px;
 	border-radius: 10px;
 }
 
 #inputGroup{
-	font-family: 'Hanna', serif;
+	font-family: 'Sriracha', cursive;
 }
 
 #resultLabel{
