@@ -15,5 +15,15 @@ public interface UserRepository extends JpaRepository<User,String> {
 			+ "  WHERE A.USER_ID IN (:userId)", 
 			nativeQuery = true)
 	User findByUserId(@Param("userId")String userId);
+	
+	@Query(value = "SELECT * FROM user A"
+			+ "  WHERE BINARY(A.USER_ID) IN (:userId)", 
+			nativeQuery = true)
+	User findByUserId2(@Param("userId")String userId);
+	
+	@Query(value = "SELECT * FROM user A"
+			+ "  WHERE A.USER_NAME IN (:userName)", 
+			nativeQuery = true)
+	User findByUserName(@Param("userName")String userName);
 
 }

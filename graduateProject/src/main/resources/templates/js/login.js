@@ -1,35 +1,87 @@
 function signUp()
 {
-	$('#validselUserId').hide();
-	$('#validselUserPwd').hide();
-	$('#validselUserNm').hide();
+	$('#validselUserId1').hide();
+	$('#validselUserId2').hide();
+	$('#validselUserId3').hide();
+	$('#validselUserPwd1').hide();
+	$('#validselUserPwd2').hide();
+	$('#validselUserPwd3').hide();
+	$('#validselUserPwd4').hide();
+	$('#validselUserNm1').hide();
+	$('#validselUserNm2').hide();
+	$('#validselUserNm3').hide();
 	
 	var userId = $('#selUserId').val();
 	var userPwd = $('#selUserPwd').val();
+	var userPwd2 = $('#selUserPwd2').val();
 	var userName = $('#selUserNm').val();
 	
-	if(userId == "" || userPwd == "" || userName == "")
+	var isValid = true;
+	
+	if(userId == "" || !idCheck(userId))
 	{
+		isValid = false;
 		
 		if(userId == "")
 		{
-			$('#validselUserId').show();
+			$('#validselUserId1').show();
 		}
+		
+		else if(!idCheck(userId))
+		{
+			$('#validselUserId2').show();
+		}
+		
+	}
+	if(userPwd =="" || !passwordCheck(userPwd))
+	{
+		isValid = false;
 		
 		if(userPwd == "")
 		{
-			$('#validselUserPwd').show();
+			$('#validselUserPwd1').show();
 		}
+		
+		else if(!passwordCheck(userPwd))
+		{
+			$('#validselUserPwd2').show();
+		}	
+
+	}
+	
+	if(userPwd2 =="" || userPwd != userPwd2 )
+	{
+		isValid = false;
+		
+		if(userPwd2 == "")
+		{
+			$('#validselUserPwd4').show();
+		}
+		
+		else 
+		{
+			$('#validselUserPwd3').show();
+		}	
+
+	}
+	
+	if(userName == "" || !nickNameCheck(userName))
+	{
+		isValid = false;
 		
 		if(userName == "")
 		{
-			$('#validselUserNm').show();
+			$('#validselUserNm1').show();
 		}
 		
-		
-		
+		else if(!nickNameCheck(userName))
+		{
+			$('#validselUserNm2').show();
+		}
+	
 	}
-	else
+	
+	if(isValid)
 	{
 		
 	var data ={
@@ -56,13 +108,18 @@ function signUp()
     			}
     		else if(response == 2)
     		{
-    			alert('Your ID Already Exists.');
+    			$('#validselUserId3').show();
     			}
-    		else{
-    			alert('Fail : Check Your Nickname If It Is English Or Not.')
+    		else if(response == 3){
+    			$('#validselUserNm3').show();
     		}
-    		
-    		
+    		else if(response == 5){
+    			$('#validselUserId3').show();
+    			$('#validselUserNm3').show();
+    		}
+    		else{
+    			alert('에러가 발생했습니다.');
+    		}
         },
         failure: function( response ) {
      	   alert('fail');
@@ -137,3 +194,28 @@ function signIn()
 	}
 
 }
+function idCheck(x)
+{
+        var reg = /^[a-z0-9]{6,14}$/;
+        return reg.test(x);
+}
+
+function passwordCheck(x)
+{
+	var reg = /^[a-zA-Z0-9\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]{6,14}$/;
+    return reg.test(x);
+}
+
+function nickNameCheck(x)
+{
+        var reg = /^[a-zA-Z0-9]{1,14}$/;
+        return reg.test(x);
+}
+
+function clickEnter(){
+	if(window.event.keyCode == 13){
+		signIn();
+	}
+}
+
+
