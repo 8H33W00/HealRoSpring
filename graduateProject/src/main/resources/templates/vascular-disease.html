@@ -16,65 +16,124 @@
 <div class="container">
     <div th:replace="./common/topbar :: topbar"></div>
     <div class="jumbotron">
-        <h1 class="display-4">Vascular disease</h1>
+        <h1 class="display-4">Cardiovascular disease</h1>
 
 
         <hr class="my-4">
         <div class="summary row mt-3 ml-3">
             <div class="col-5">
                 <div class="row">
-                    <iframe width="600" height="300" src="https://www.youtube.com/embed/D8Pona5CRtQ" frameborder="0"
+                    <iframe width="1280" height="300" src="https://www.youtube.com/embed/fTxmkH9crGI" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                 </div>
                 <div class="row mt-4">
                     <div class="mt-4">
-                        <h2 class="ml-4">������ȯ �߻� Ȯ�� ����</h2>
+                        <h2 class="ml-4">심혈관 질환 발생 확률 예측</h2>
                     </div>
                 </div>
                 <div class="row mt-3 mr-3">
-                    <button class="btn btn-primary btn-lg btn-block" onclick="">Predict</button>
+                    <button class="btn btn-primary btn-lg btn-block" onclick="heartDiseasePredict2()">Predict</button>
                 </div>
             </div>
             <div class="col-6" id="explain1">
-                ���ư�ȭ�� �� �� ����� ���� ���Դϴ�. �׷����� � ���̳İ� ������, �� ������ �� �������� �𸨴ϴ�. ���� ��ȭ��, �˱� ���� ���ϸ� ������ ��ȭ�Դϴ�. �Ǻο� �ָ� �Ǵ� �����
-                ����� �Ǻΰ� ������ ��ó��, ������ ���ɰ� �Բ� ��ġ�� ��������, �����Ե� ���ϵ˴ϴ�. ���� �Ǻ��� ��ȭ�� �ٸ� ���� ������ ����Ǵ� ��ȭ��� ���Դϴ�. �ܰ������δ� �� �� ���� ������
-                ��κ��� ����� ������ ��ȭ�� ������ ���ϰ� ��ġ�� �ΰ� �ֽ��ϴ�. �� ���, ������ ���� ���� �������ų� ������ ���� ������ �� ��, ��� �� ���ڱ� �ɱٰ���̳� �������̶�� �ɰ���
-                ���� ����ŵ�ϴ�.
+                심혈관질환은 뇌와 심장에 혈액을 공급하는 혈관에 이상이 생긴 질환을 포함하며, 협심증, 심근경색(심장마비), 뇌경색(허혈성 뇌졸중) 등이 심혈관질환에 해당됩니다 .
             </div>
         </div>
 
         <hr>
+
         <div class="graph">
             <br/>
-            <h2>���󵿸���ȯ �����</h2>
+            <h2></h2>
             <br/>
-            <img src="img/graph.jpg" width="1000px" alt="">
+            <img src="img/cardiovascular_graph.jpg" width="1000px" alt="">
         </div>
 
         <hr>
-        <div class="row ml-2">
-            <div class="mt-4" id="explain2">
-                <h2 class="mt-4">������ȯ �ʱ�����</h2>
-                <br />
-                <ul class="mt-4">
-                    <li>�ð��� ����</li>
-                    <p>ü�� �ݷ����׷��� �׿� ������ȯ�� ����� ���忡������ �� �� ���̳� �� ������ ���������ų� �ǰ� �� ������ �ʾ� ������ ������ �߻��ϰ� �˴ϴ�. �� ������ �� ��ȭ�Ǿ� ������
-                        ������ �ǰ� ��ȯ���� ������ ������ ������� �־� �ſ� �����մϴ�.</p>
-                    <li>���� �� ������</li>
-                    <p>������ȯ�� ������ ���� ������ ����ε� �� �� �ִµ���. ���� ���������� ���� ���� �������� �ֽ��ϴ�. �� �������� ���� ������ �Ǿ� ������ ���� ���ٸ� �������� �ǽ���
-                        �� �ֽ��ϴ�.</p>
-                    <li>��ũ��Ŭ</li>
-                    <p>��� ��ũ��Ŭ�� �ǰ��ؼ� ����� ���� �ƴ� �� �� �������� ��ȯ ��ַ� ����� ���Դϴ�. �� �� ���������� ��ȯ���� �ʰ� ��ü�Ǿ� ���� �˰� ���̴� ������ �� ���� ������ȯ
-                        ���� �� �ϳ���� �� �� �ֽ��ϴ�.
 
-                    </p>
+        <div class="tabs col-12">
+            <input type="radio" name="tabs" id="first" checked="checked">
+            <label style='width: 33.33%;' for="first">협심증</label>
+            <div class="tab" style="width: 100%; margin: 0; padding: 20px;">
+                <h1>협심증이란?</h1>
+                <p>협심증이란 심장을 감싸고 있는 관상동맥이 막히거나 좁아졌을 때 심장근육에 충분한 혈액 공급이 이루어지지 않아 생기는 가슴 주변의 통증을 말합니다.</p>
+                <br/>
+                <h3>증상</h3>
+                <p>협심증은 마치 가슴이 좁아진 듯 조이고 뻐근한 통증이 발생하기 때문에 붙여진 이름입니다. 협심증의 증상은 소화불량처럼 느껴질 수도 있으며 통증이 어깨나 팔, 등, 목, 턱에서 느껴질
+                    수도 있습니다.</p>
+                <br/>
+                <h3>주요원인</h3>
+                <p>주요원인 : 협심증은 가장 흔한 심장질환인 관상동맥질환의 주요증상이기도 합니다. 관상동맥질환은 심장에 혈액을 공급하는 관상동맥에 플라크라고 불리는 끈적끈적한 물질이 침착하여
+                    심장으로의 혈액 공급이 감소하면서 발생합니다.</p>
+                <br/>
+                <h3>협심증이 의심된다면?</h3>
+                <p>흉부 불편감이 반드시 협심증과 관련 있는 것은 아니며, 위 - 식도 역류에 의한 가슴 쓰림, 폐의 감염 및 염증에 의해서도 흉부 통증을 느낄 수 있습니다. 그러나 협십증은 갑작스러운
+                    심장 발작이나 급사의 징후일 가능성이 있습니다. 따라서 협심증이 의심되는 흉부 통증이나 불편감이 있다면 반드시 의사의 진찰을 받아야 합니다.</p>
+            </div>
+
+            <input type="radio" name="tabs" id="second">
+            <label style='width: 33.33%;' for="second">급성심근경색</label>
+            <div class="tab" style="width: 100%; margin: 0; padding: 20px;">
+                <h1>급성심근경색이란?</h1>
+                <p>급성심근경색이란 심장근육에 혈액을 공급하는 관상동맥이 여러 원인에 의해 갑자기 막히면서 심근에 괴사가 일어나는 질환입니다.</p>
+                <br/>
+                <h3>증상</h3>
+                <p>가장 흔한 증상은 흉통입니다.</p>
+                <ul>
+                    <li>앞가슴 중앙에 아주 심한 통증</li>
+                    <li>목이나 턱, 어깨, 좌측 팔의 안쪽 등으로 퍼지는 통증 (방사통)</li>
+                    <li>식은땀과 호흡곤란, 의식의 혼돈을 동반</li>
+                </ul>
+                <br/>
+                <h3>주요원인</h3>
+                <p>급성심근경색증의 근본적인 원인은 동맥경화증입니다. 동맥경화증은 동맥 내막에 플라크가 쌓여, 혈관이 좁아지고 탄력을 잃는 질환입니다.</p>
+            </div>
+
+            <input type="radio" name="tabs" id="third">
+            <label style='width: 33.33%;' for="third">뇌졸중</label>
+            <div class="tab" style="width: 100%; margin: 0; padding: 20px;">
+                <h1>뇌졸중이란?</h1>
+                <p>뇌졸중은 뇌에 혈액을 공급하는 혈관이 막히거나 터져서 뇌에 손상이 오는 질환입니다.</p>
+                <br/>
+                <h3>종류</h3>
+                <ul>
+                    <li>허혈성 뇌졸중 : 뇌혈관이 막혀서 발생</li>
+                    <li>출혈성 뇌졸중 : 뇌로 가는 혈관이 터지면서 출혈 발생</li>
+                    <li>일과성 허혈 발작 : 잠깐 동안 혈류 공급이 중단되어 발생한다. 작은 뇌졸중이라고도 불림</li>
+                </ul>
+                <br/>
+                <h3>증상</h3>
+                <p>뇌의 영역마다 혈액을 공급하는 혈관이 구분되어 있으며, 각자 담당하는 기능이 다릅니다. 따라서 어느 혈관이 문제를 일으켰는지, 손상된 뇌의 위치와 범위가 어떠한지에 따라 다양한
+                    증상이 나타납니다. 대표적인 증상은 다음과 같습니다.</p>
+                <ul>
+                    <li>반신불수</li>
+                    <li>발음장애</li>
+                    <li>복시</li>
+                    <li>감각이상 및 감각소실</li>
+                    <li>안면 신경마비</li>
+                    <li>연하곤란 (삼킴장애)</li>
+                    <li>두통 및 구토</li>
+                    <li>운동실조증</li>
+                </ul>
+                <br/>
+                <h3>뇌졸중 대처요령</h3>
+                <p>뇌졸중을 판단하고 응급처치를 할 때 미국뇌졸중협회에서 권고하고 있는 FAST를 기억하세요.</p>
+                <ul>
+                    <li>F (Face) : 웃어보세요!</li>
+                    <p>만약 얼굴의 한쪽이 일그러지거나 쳐진다면 뇌졸중을 의심해야 합니다.</p>
+                    <li>A (Arms) : 두 팔을 머리 위로 들어보세요!</li>
+                    <p>한쪽 팔을 떨어뜨린다면 뇌줄중일수도 있습니다.</p>
+                    <li>S (Speech) : 말을 해보세요!</li>
+                    <p>같은 말을 반복하는 것을 어려워하거나 말끝을 흐린다면 뇌졸중을 의심해볼 수 있습니다.</p>
+                    <li>T (Time) : 시간은 생명!</li>
+                    <p>위의 증상을 보이면 즉시 응급구조를 요청하고, 가능한 빨리 의료진의 도움을 받아야 합니다.</p>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-</div>
+
 
 <script th:inline="javascript">
     var userNickName = [[${session.userNickName}]];
