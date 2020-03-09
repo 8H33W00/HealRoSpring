@@ -33,9 +33,18 @@ public class UserRestController {
 	@PostMapping("/signUp")
 	public int signUp(@RequestBody User user)
 	{
-		if(userService.search(user.getUserId()))
+		int response = 0;
+		if(userService.searchId(user.getUserId()))
 		{
-			return 2;
+			response += 2;
+		}
+		if(userService.searchName(user.getUserName()))
+		{
+			response += 3;
+		}
+		
+		if(response != 0) {
+			return response;
 		}
 		
 		boolean check = userService.create(user);
@@ -43,11 +52,9 @@ public class UserRestController {
 		{
 			return 1;
 		}
-		else
-		{
-			return 3;
+		else {
+			return 0;
 		}
-		
 	}
 	
 	@PostMapping("/signIn")

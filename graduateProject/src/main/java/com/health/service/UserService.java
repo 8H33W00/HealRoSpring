@@ -29,9 +29,19 @@ public class UserService {
 		
 	}
 	
-	public boolean search(String userId)
+	public boolean searchId(String userId)
 	{
 		if(userRepo.findByUserId(userId) != null)
+		{
+			return true;
+		}
+		
+		return false;
+	}
+	
+	public boolean searchName(String userName)
+	{
+		if(userRepo.findByUserName(userName) != null)
 		{
 			return true;
 		}
@@ -48,9 +58,9 @@ public class UserService {
 	public int login(User user)
 	{
 		System.out.println("----------------"+user);
-		if(userRepo.findByUserId(user.getUserId()) != null)
+		if(userRepo.findByUserId2(user.getUserId()) != null)
 		{
-			User checkUser = userRepo.findByUserId(user.getUserId());
+			User checkUser = userRepo.findByUserId2(user.getUserId());
 			System.out.println("----------------"+checkUser);
 			if(user.getUserPwd().equals(checkUser.getUserPwd()))
 			{
