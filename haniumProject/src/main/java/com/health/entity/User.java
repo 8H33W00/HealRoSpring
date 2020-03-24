@@ -9,10 +9,11 @@ import lombok.Data;
 @Data
 public class User {
 	
-	@Id
+	
 	String userId;
 	
 	String userPwd;
+	@Id
 	String userName;
 
 }
