@@ -13,6 +13,7 @@ public class User {
 	String userId;
 	
 	String userPwd;
+	
 	@Id
 	String userName;
 
