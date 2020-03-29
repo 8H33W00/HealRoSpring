@@ -93,3 +93,14 @@ $('#selectDisease').on('change',function(){
 	}
 	
 })
+
+$('#postBtn').on('click',function(){
+	
+	var data = $('#selectDisease').val();
+	getView("post?type=" + data);
+})
+
+function view(id)
+{
+	getView("view?id="+id);
+}
