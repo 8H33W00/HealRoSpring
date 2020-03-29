@@ -74,14 +74,7 @@ public class ViewController {
 		
 	}
 	
-	@GetMapping("/community")
-	public ModelAndView community()
-	{
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("community");
-		return mv;
-		
-	}
+	
 	
 	@GetMapping("/login")
 	public ModelAndView login()
