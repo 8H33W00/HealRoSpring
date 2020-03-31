@@ -62,9 +62,27 @@ $(document).ready(function(){
 			]
 	    });
 		
+		if(type == 1)
+		{
+			$("#selectDisease").val("coronary").prop("selected", true);
+			$('#cardio').hide();
+			$('#diabetes').hide();
+		}
+		else if(type == 2)
+		{
+			$("#selectDisease").val("diabete").prop("selected", true);
+			$('#cardio').hide();
+			$('#coronary').hide();
+			
+		}
+		else if(type == 3)
+		{
+			$("#selectDisease").val("cardio").prop("selected", true);
+			$('#diabetes').hide();
+			$('#coronary').hide();
+			
+		}
 		
-		$('#cardio').hide();
-		$('#diabetes').hide();
 		
 });
 
@@ -100,7 +118,17 @@ $('#postBtn').on('click',function(){
 	getView("post?type=" + data);
 })
 
-function view(id)
+function coronaryView(id)
 {
-	getView("view?id="+id);
+	getView("coronaryView?id="+id);
+}
+
+function diabeteView(id)
+{
+	getView("diabeteView?id="+id);
+}
+
+function cardioView(id)
+{
+	getView("cardioView?id="+id);
 }

@@ -24,7 +24,7 @@ $('#postBtn').on('click',function(){
 		    },
 	    	success: function(response) {
 	    		
-	    		getView('community');
+	    		getView('community?type=1');
 	        },
 	        failure: function( response ) {
 	     	   alert('fail');
@@ -33,10 +33,41 @@ $('#postBtn').on('click',function(){
 	}
 	else if(type == "diabete")
 	{
+		$.ajax({
+	        url: 'createDiabete',
+	        type: 'POST',
+	        data: JSON.stringify(data),
+	        contentType: 'application/json',
+		    xhrFields: {
+		        withCredentials: true
+		    },
+	    	success: function(response) {
+	    		
+	    		getView('community?type=2');
+	        },
+	        failure: function( response ) {
+	     	   alert('fail');
+	        }
+		});
 		
 	}
 	else if(type == "cardio")
 	{
-		
+		$.ajax({
+	        url: 'createCardio',
+	        type: 'POST',
+	        data: JSON.stringify(data),
+	        contentType: 'application/json',
+		    xhrFields: {
+		        withCredentials: true
+		    },
+	    	success: function(response) {
+	    		
+	    		getView('community?type=3');
+	        },
+	        failure: function( response ) {
+	     	   alert('fail');
+	        }
+		});
 	}
 })

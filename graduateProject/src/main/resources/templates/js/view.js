@@ -6,16 +6,42 @@ $( document ).ready(function() {
 		})
 		
 	if(nickname == userNickName)
-		{
+	{
 		$('#admin').show();
-		}
+	}
 });
 
 function deletePost(id)
 {
-	getView("deletePost?id=" + id);
+	if(type == 1)
+	{
+		getView("deleteCoronaryPost?id=" + id);
+	}
+	else if(type == 2)
+	{
+		getView("deleteDiabetePost?id=" + id);
+	}
+	else if(type == 3)
+	{
+		getView("deleteCardioPost?id=" + id);
+	}
+	
 
 }
+
+function createComment(id){
+	
+	var comment = $('#comment').val();
+	if(comment == '')
+	{
+		alert('내용을 입력하세요');
+		}
+	else
+	{
+		getView("createComment?id=" + id);
+	}
+}
+
 
 /**
  * 
