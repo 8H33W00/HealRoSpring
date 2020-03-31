@@ -27,11 +27,23 @@
 		<textarea  class="form-control"  style="border: none; font-size: 30px" th:text = "${title}" readonly></textarea>
 		<hr>
 		<textarea id ="content" style="border: none;" class= "mt-5 form-control" rows="10" cols = 40 th:text = "${content}" readonly="readonly"></textarea>		
-		<div class ="row mt-5">
-			<div class ="col-10 mr-3"></div>
-			<div class ="col-1 ml-5"><button id ="postBtn" class="btn btn-primary btn-lg">POST</button></div>
+		<hr>
+		
+		<div class="row">
+			<div class="row">
+				<i class="fas fa-user ml-4 mt-3"></i>
+				<input class="form-control ml-1" type="text" value="user" style="width : 200px; border: none; font-size:20px; background-color: none;" readonly>
+			</div>
+			<div class="row">
+				<input class="form-conrtol" readonly value=" 안녕하세요"  style="border-radius: 10px; background-color:#DEDEDD; width : 800px; border: none;">
+			</div>
 		</div>
-	
+		<hr>
+		<div class ="row mt-2">
+			<textarea id= "comment" class="form-control col-10 ml-2"></textarea>
+			<button id ="commentBtn" class="btn btn-primary btn-lg ml-4">Comment</button>
+		</div>
+		
 	</div>
 	
 </div>
@@ -40,6 +52,7 @@
 <script th:inline="javascript">
     	var nickname = [[${nickname}]];
     	var userNickName = [[${session.userNickName}]];
+    	var type = [[${type}]];
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" ></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>

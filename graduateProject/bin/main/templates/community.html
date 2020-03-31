@@ -17,7 +17,7 @@
 	<div th:replace = "./common/topbar :: topbar"></div>
 	<div class="mt-5">
 		<div class ="row mb-4">
-			<div class="col-4">
+			<div id ="selectArea" class="col-4">
 				<select class ="form-control" id ="selectDisease">
 					<option selected value ="coronary">Coronary artery disease</option>
 					<option value ="diabete">Diabetes</option>
@@ -43,8 +43,8 @@
 					</thead>
 					<tbody>
 						<tr th:each = "coronaryList:${coronaryList}">
-							<td th:text = "${coronaryList.nickname}" ></td>
-							<td th:text = "${coronaryList.title}" th:onclick ="'view('+ ${coronaryList.id}  +')'"></td>
+							<td style ="width : 200px" th:text = "${coronaryList.nickname}" ></td>
+							<td th:text = "${coronaryList.title}" th:onclick ="'coronaryView('+ ${coronaryList.id}  +')'"></td>
 							<td th:text = "${coronaryList.time}"></td>
 						</tr>
 					</tbody>
@@ -61,10 +61,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each = "testList:${testList}">
-							<td th:text = "${testList.Id}" ></td>
-							<td th:text = "${testList.startDate}"></td>
-							<td th:text = "${testList.endDate}"></td>
+						<tr th:each = "diabetesList:${diabetesList}">
+							<td style ="width : 200px" th:text = "${diabetesList.nickname}" ></td>
+							<td th:text = "${diabetesList.title} " th:onclick ="'diabeteView('+ ${diabetesList.id}  +')'"></td>
+							<td th:text = "${diabetesList.time}"></td>
 						</tr>
 					</tbody>
 				</table>
@@ -80,10 +80,10 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each = "testList:${testList}">
-							<td th:text = "${testList.Id}" ></td>
-							<td th:text = "${testList.startDate}"></td>
-							<td th:text = "${testList.endDate}"></td>
+						<tr th:each = "cardioList:${cardioList}">
+							<td style ="width : 200px" th:text = "${cardioList.nickname}" ></td>
+							<td th:text = "${cardioList.title}" th:onclick ="'cardioView('+ ${cardioList.id}  +')'"></td>
+							<td th:text = "${cardioList.time}"></td>
 						</tr>
 					</tbody>
 				</table>
@@ -92,7 +92,9 @@
 	
 </div>
 
-
+<script th:inline="javascript">
+    	var type = [[${type}]];
+</script>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" ></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
