@@ -36,6 +36,7 @@
 				<table id = "coronaryTb" class="table table-striped table-bordered" style="width:100%">
 					<thead>
 						<tr>
+							<td>ID</td>
 							<td>NickName</td>
 							<td>Title</td>
 							<td>Date</td>
@@ -43,8 +44,9 @@
 					</thead>
 					<tbody>
 						<tr th:each = "coronaryList:${coronaryList}">
+							<td style ="width : 50px" th:text = "${coronaryList.id}"></td>
 							<td style ="width : 200px" th:text = "${coronaryList.nickname}" ></td>
-							<td th:text = "${coronaryList.title}" th:onclick ="'coronaryView('+ ${coronaryList.id}  +')'"></td>
+							<td style ="width : 500px" th:text = "${coronaryList.title}" th:onclick ="'coronaryView('+ ${coronaryList.id}  +')'"></td>
 							<td th:text = "${coronaryList.time}"></td>
 						</tr>
 					</tbody>
@@ -55,6 +57,7 @@
 				<table id = "diabetesTb" class="table table-striped table-bordered" style="width:100%">
 					<thead>
 						<tr>
+							<td>ID</td>
 							<td>NickName</td>
 							<td>Title</td>
 							<td>Date</td>
@@ -62,8 +65,9 @@
 					</thead>
 					<tbody>
 						<tr th:each = "diabetesList:${diabetesList}">
+							<td style ="width : 50px" th:text = "${diabetesList.id}"></td>
 							<td style ="width : 200px" th:text = "${diabetesList.nickname}" ></td>
-							<td th:text = "${diabetesList.title} " th:onclick ="'diabeteView('+ ${diabetesList.id}  +')'"></td>
+							<td style ="width : 500px" th:text = "${diabetesList.title} " th:onclick ="'diabeteView('+ ${diabetesList.id}  +')'"></td>
 							<td th:text = "${diabetesList.time}"></td>
 						</tr>
 					</tbody>
@@ -74,6 +78,7 @@
 				<table id = "cardioTb" class="table table-striped table-bordered" style="width:100%">
 					<thead>
 						<tr>
+							<td>ID</td>
 							<td>NickName</td>
 							<td>Title</td>
 							<td>Date</td>
@@ -81,8 +86,9 @@
 					</thead>
 					<tbody>
 						<tr th:each = "cardioList:${cardioList}">
+							<td style ="width : 50px" th:text = "${cardioList.id}"></td>
 							<td style ="width : 200px" th:text = "${cardioList.nickname}" ></td>
-							<td th:text = "${cardioList.title}" th:onclick ="'cardioView('+ ${cardioList.id}  +')'"></td>
+							<td style ="width : 500px" th:text = "${cardioList.title}" th:onclick ="'cardioView('+ ${cardioList.id}  +')'"></td>
 							<td th:text = "${cardioList.time}"></td>
 						</tr>
 					</tbody>

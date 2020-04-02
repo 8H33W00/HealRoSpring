@@ -34,6 +34,8 @@ $(document).ready(function(){
 			},
 			pageLength: 10,
 			order: [[0, "desc"]],
+			ordering: true,
+			serverSide: false,
 			drawCallBack: function(){
 			  $(".dataTables_paginate > .pagination").addClass("pagination-rounded");
 			},
