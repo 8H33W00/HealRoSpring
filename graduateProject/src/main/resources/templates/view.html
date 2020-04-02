@@ -29,13 +29,13 @@
 		<textarea id ="content" style="border: none;" class= "mt-5 form-control" rows="10" cols = 40 th:text = "${content}" readonly="readonly"></textarea>		
 		<hr>
 		
-		<div class="row">
+		<div class="row mt-2" th:each ="commentList:${commentList}">
 			<div class="row">
 				<i class="fas fa-user ml-4 mt-3"></i>
-				<input class="form-control ml-1" type="text" value="user" style="width : 200px; border: none; font-size:20px; background-color: none;" readonly>
+				<input class="form-control ml-1" type="text" th:value="${commentList.nickname}" style="width : 200px; border: none; font-size:20px; background-color: none;" readonly>
 			</div>
 			<div class="row">
-				<input class="form-conrtol" readonly value=" 안녕하세요"  style="border-radius: 10px; background-color:#DEDEDD; width : 800px; border: none;">
+				<input class="form-conrtol" readonly th:value="${commentList.comment}"  style="border-radius: 10px; background-color:#DEDEDD; width : 800px; border: none;">
 			</div>
 		</div>
 		<hr>
@@ -53,6 +53,7 @@
     	var nickname = [[${nickname}]];
     	var userNickName = [[${session.userNickName}]];
     	var type = [[${type}]];
+    	var Id = [[${id}]];
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" ></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>

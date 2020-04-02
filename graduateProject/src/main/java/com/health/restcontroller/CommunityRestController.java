@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.health.entity.CardioTb;
+import com.health.entity.Comment;
 import com.health.entity.CoronaryTb;
 import com.health.entity.DiabetesTb;
 import com.health.entity.User;
 import com.health.repository.CardioRepository;
 import com.health.service.CardioService;
+import com.health.service.CommentService;
 import com.health.service.CoronaryTbService;
 import com.health.service.DiabeteService;
 
@@ -32,6 +34,10 @@ public class CommunityRestController {
 	
 	@Autowired
 	CardioService cardioService;
+	
+	
+	@Autowired
+	CommentService comService;
 
 	
 	@GetMapping("/post")
@@ -72,4 +78,16 @@ public class CommunityRestController {
 		return 0;
 		
 	}
+	
+	
+	@PostMapping("/createComment")
+	public int createDiabete(@RequestBody Comment com)
+	{
+		Date now = new Date(System.currentTimeMillis());
+		com.setTime(now);
+		comService.create(com);
+		return 0;
+		
+	}
+	
 }

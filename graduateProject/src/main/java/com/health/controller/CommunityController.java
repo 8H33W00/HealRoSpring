@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.health.entity.CardioTb;
+import com.health.entity.Comment;
 import com.health.entity.CoronaryTb;
 import com.health.entity.DiabetesTb;
 import com.health.service.CardioService;
+import com.health.service.CommentService;
 import com.health.service.CoronaryTbService;
 import com.health.service.DiabeteService;
 
@@ -27,6 +29,9 @@ public class CommunityController {
 	CardioService cardioService;
 	@Autowired
 	DiabeteService diaService;
+	@Autowired
+	CommentService commentService;
+	
 	
 	@GetMapping("/community")
 	public ModelAndView community(@RequestParam(value = "type", defaultValue="1") int type)
@@ -48,6 +53,7 @@ public class CommunityController {
 	@GetMapping("/coronaryView")
 	public ModelAndView coronaryView(@RequestParam("id") int id)
 	{	
+		List<Comment> commentList = commentService.coronaryComment(id);
 		CoronaryTb coronary = coronaryService.findCoronaryTbById(id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
@@ -56,6 +62,7 @@ public class CommunityController {
 		mv.addObject("nickname",coronary.getNickname());
 		mv.addObject("id",coronary.getId());
 		mv.addObject("type",1);
+		mv.addObject("commentList",commentList);
 		return mv;
 		
 	}
@@ -63,6 +70,8 @@ public class CommunityController {
 	@GetMapping("/diabeteView")
 	public ModelAndView diabeteView(@RequestParam("id") int id)
 	{	
+		
+		List<Comment> commentList = commentService.diabetesComment(id);
 		DiabetesTb dia = diaService.findDiabetesTbById(id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
@@ -71,6 +80,7 @@ public class CommunityController {
 		mv.addObject("nickname",dia.getNickname());
 		mv.addObject("id",dia.getId());
 		mv.addObject("type",2);
+		mv.addObject("commentList",commentList);
 		return mv;
 		
 	}
@@ -78,6 +88,7 @@ public class CommunityController {
 	@GetMapping("/cardioView")
 	public ModelAndView cardioView(@RequestParam("id") int id)
 	{	
+		List<Comment> commentList = commentService.cardioComment(id);
 		CardioTb cardio = cardioService.findCardioTbById(id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
@@ -86,6 +97,7 @@ public class CommunityController {
 		mv.addObject("nickname",cardio.getNickname());
 		mv.addObject("id",cardio.getId());
 		mv.addObject("type",3);
+		mv.addObject("commentList",commentList);
 		return mv;
 		
 	}

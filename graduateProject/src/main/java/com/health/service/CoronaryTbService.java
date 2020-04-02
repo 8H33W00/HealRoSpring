@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.health.entity.CoronaryTb;
+import com.health.repository.CommentRepository;
 import com.health.repository.CoronaryTbRepository;
 
 
@@ -16,7 +17,8 @@ public class CoronaryTbService {
 
 	@Autowired
 	CoronaryTbRepository coronaryRepo;
-	
+	@Autowired
+	CommentRepository comRepo;
 	
 	public void create(CoronaryTb coro)
 	{
@@ -25,6 +27,7 @@ public class CoronaryTbService {
 	
 	public void delete(int id)
 	{
+		comRepo.deleteComment(1, id);
 		coronaryRepo.deleteById(id);
 	}
 	
