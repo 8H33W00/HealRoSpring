@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.health.entity.CardioTb;
 import com.health.entity.DiabetesTb;
 import com.health.repository.CardioRepository;
+import com.health.repository.CommentRepository;
 import com.health.repository.DiabetesRepository;
 
 @Service
@@ -17,7 +18,8 @@ public class DiabeteService {
 	
 	@Autowired
 	DiabetesRepository diabeteRepo;
-	
+	@Autowired
+	CommentRepository comRepo;
 	
 	public void create(DiabetesTb dia)
 	{
@@ -26,6 +28,7 @@ public class DiabeteService {
 	
 	public void delete(int id)
 	{
+		comRepo.deleteComment(2,id);
 		diabeteRepo.deleteById(id);
 	}
 	
