@@ -16,6 +16,15 @@ public class ViewController {
 		return mv;
 	}
 	
+	@GetMapping("/gpsTest")
+	public ModelAndView gpsTest()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("gps");
+		
+		return mv;
+	}
+	
 	@GetMapping("/diabetes")
 	public ModelAndView diabetes()
 	{
