@@ -16,18 +16,32 @@
 <div class ="container">
 	<div th:replace = "./common/topbar :: topbar"></div>
 	<div class="jumbotron mt-5">
-		<div id ="admin"  class="row">
-			<div class="col-10">
+	
+		<div id = "showArea">
+			<div id ="admin"  class="row">
+				<div class="col-10">
+				</div>
+				<div class="col-2">
+					<i class="fa fa-edit fa-2x mr-2" aria-hidden="true"  th:onclick="'modifyPost()'" data-toggle="tooltip" data-placement="top" title="Modify"></i>
+					<i class="fa fa-trash fa-2x mr-2" aria-hidden="true" th:onclick="'deletePost(' + ${id} + ')'" data-toggle="tooltip" data-placement="top" title="Delete"></i>
+				</div>
 			</div>
-			<div class="col-2">
-				<i class="fa fa-edit fa-2x mr-2" aria-hidden="true"  data-toggle="tooltip" data-placement="top" title="Modify"></i>
-				<i class="fa fa-trash fa-2x mr-2" aria-hidden="true" th:onclick="'deletePost(' + ${id} + ')'" data-toggle="tooltip" data-placement="top" title="Delete"></i>
-			</div>
+			<textarea  class="form-control"  style="border: none; font-size: 30px" th:text = "${title}" readonly></textarea>
+			<hr>
+			<textarea id ="content" style="border: none;" class= "mt-5 form-control" rows="10" cols = 40 th:text = "${content}" readonly="readonly"></textarea>		
+			<hr>
 		</div>
-		<textarea  class="form-control"  style="border: none; font-size: 30px" th:text = "${title}" readonly></textarea>
-		<hr>
-		<textarea id ="content" style="border: none;" class= "mt-5 form-control" rows="10" cols = 40 th:text = "${content}" readonly="readonly"></textarea>		
-		<hr>
+		<div id ="updateArea">
+			<textarea id ="updateTitle" class="form-control"  style="border: none; font-size: 30px" th:text = "${title}"></textarea>
+			<hr>
+			<textarea id ="updateContent" style="border: none;" class= "mt-5 form-control" rows="10" cols = 40 th:text = "${content}"></textarea>		
+			<div class="row mt-3">
+				<div class ="col-10"></div>
+				<div class ="col-2"><button th:onclick="'editPost(' + ${id} + ')'" id="edit" class="btn btn-info btn-lg pl-5 pr-5">Edit</button></div>
+			</div>
+			<hr>
+		</div>
+		
 		
 		<div class="row mt-2" th:each ="commentList:${commentList}">
 			<div class="row">
@@ -35,7 +49,8 @@
 				<input class="form-control ml-1" type="text" th:value="${commentList.nickname}" style="width : 200px; border: none; font-size:20px; background-color: none; " readonly>
 			</div>
 			<div class="row">
-				<input class="form-conrtol" readonly th:value="${commentList.comment}"  style="border-radius: 10px; background-color:#DEDEDD; width : 800px; border: none; padding-left: 10px;">
+				<input class="form-conrtol" readonly th:value="${commentList.comment}"  style="border-radius: 10px; background-color:#DEDEDD; width : 800px; border: none; padding-left: 10px;" >
+				<i class="fas fa-minus-circle ml-3 mt-2" th:if ="${commentList.nickname} == ${session.userNickName}" th:onclick="'deleteComment(' + ${commentList.id} + ')'"></i>
 			</div>
 		</div>
 		<hr>
