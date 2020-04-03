@@ -21,6 +21,11 @@ public class CommentService {
 		comrepo.save(co);
 	}
 	
+	public void deleteByid(int id)
+	{
+		comrepo.deleteById(id);
+	}
+	
 	public List<Comment> coronaryComment(int id)
 	{
 		List<Comment> list = comrepo.findBynum(id);
