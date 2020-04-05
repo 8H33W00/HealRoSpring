@@ -1,5 +1,6 @@
 package com.health.service;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
@@ -11,8 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUploadService {
 
 	
-	private static final String SAVE_PATH = System.getProperty("user.dir")+"/files/img";
-	public void restore(MultipartFile multipartFile) {
+	private static final String SAVE_PATH = System.getProperty("user.dir")+"/src/main/resources/templates/files/img";
+	public File restore(MultipartFile multipartFile) {
 		
 		try {
 			// 파일 정보
@@ -29,7 +30,7 @@ public class FileUploadService {
 			System.out.println("size : " + size);
 			System.out.println("saveFileName : " + saveFileName);
 			
-			writeFile(multipartFile, originFilename);
+			return writeFile(multipartFile, originFilename);
 		}
 		catch (IOException e) {
 			// 원래라면 RuntimeException 을 상속받은 예외가 처리되어야 하지만
@@ -59,15 +60,26 @@ public class FileUploadService {
 	
 	
 	// 파일을 실제로 write 하는 메서드
-	private boolean writeFile(MultipartFile multipartFile, String saveFileName)
+	private File writeFile(MultipartFile multipartFile, String saveFileName)
 								throws IOException{
-		boolean result = false;
+		
 
 		byte[] data = multipartFile.getBytes();
 		FileOutputStream fos = new FileOutputStream(SAVE_PATH + "/" + saveFileName);
 		fos.write(data);
 		fos.close();
 		
-		return result;
+		File file = new File(SAVE_PATH + "/" + saveFileName);
+		if(file.exists())
+		{
+			System.out.println("존재!!!!!!!!!!!!!!!!!!");
+		}
+		else
+		{
+			System.out.println("안존재!!!!!!!!!!!!!!!!!!");
+		}
+		
+		
+		return file;
 	}
 }
