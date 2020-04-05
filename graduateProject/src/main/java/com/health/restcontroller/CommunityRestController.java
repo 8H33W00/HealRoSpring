@@ -1,5 +1,6 @@
 package com.health.restcontroller;
 
+import java.io.File;
 import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,9 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.health.entity.CardioTb;
@@ -22,6 +26,7 @@ import com.health.service.CardioService;
 import com.health.service.CommentService;
 import com.health.service.CoronaryTbService;
 import com.health.service.DiabeteService;
+import com.health.service.FileUploadService;
 
 
 @RestController
@@ -36,6 +41,8 @@ public class CommunityRestController {
 	@Autowired
 	CardioService cardioService;
 	
+	@Autowired
+	FileUploadService fileUploadService;
 	
 	@Autowired
 	CommentService comService;
@@ -98,6 +105,19 @@ public class CommunityRestController {
 		comService.deleteByid(id);
 		return 0;
 		
+	}
+	
+	
+
+	@ResponseBody
+	@RequestMapping(value = "/uploadImage", method = RequestMethod.POST, produces = "text/plain;charset=utf-8")
+	public String uploadImage(@RequestParam(value = "img") MultipartFile file)
+	{
+
+		fileUploadService.restore(file);
+		
+		
+		return file.getOriginalFilename();
 	}
 	
 }

@@ -22,6 +22,7 @@ public class DiabetesTb {
 	String title;
 	String content;
 	Date time;
+	String img;
 
 }
 
