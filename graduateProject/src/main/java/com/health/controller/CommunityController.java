@@ -91,7 +91,7 @@ public class CommunityController {
 		
 		if(dia.getImg() != null)
 		{
-			String url2 = System.getProperty("user.dir")+"/files/img"+ dia.getImg();
+			String url2 =  dia.getImg();
 			mv.addObject("url2",url2);
 		}
 		else
@@ -119,7 +119,7 @@ public class CommunityController {
 		
 		if(cardio.getImg() != null)
 		{
-			String url2 =  System.getProperty("user.dir")+"/files/img" + cardio.getImg();
+			String url2 =  cardio.getImg();
 			mv.addObject("url2",url2);
 		}
 		else

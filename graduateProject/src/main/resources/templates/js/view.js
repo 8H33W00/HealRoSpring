@@ -6,7 +6,7 @@ $( document ).ready(function() {
 	}
 	else
 	{
-		var html = "<img src= '../t.PNG'  style='width:250px'>"
+		var html = "<img src= './files/img/"+ url2 +"'  style='width:250px'>"
 		$('#imageArea').append(html);
 	}
 	
