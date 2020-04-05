@@ -25,6 +25,7 @@ public class CoronaryTb {
 	String title;
 	String content;
 	Date time;
+	String img;
 	
 
 }

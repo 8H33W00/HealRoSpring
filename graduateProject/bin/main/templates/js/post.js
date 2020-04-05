@@ -4,13 +4,43 @@
 
 $('#postBtn').on('click',function(){
 	
+	
+	var fileValue = $("#file").val().split("\\");
+	var fileName = fileValue[fileValue.length-1];
+	
 	var data = {
 			'nickname' :userNickName,
 			'title' : $('#title').val(),
 			'content': $('#content').val(),	
+			'img' : fileName
 	}
 	
-
+	
+	
+	var formData = new FormData();
+	console.log($('input[type=file]')[0].files[0]);
+	formData.append('img', $('#file')[0].files[0]);
+	console.log(formData);
+	
+	
+	
+	$.ajax({
+		//두개 false로 해야함.
+        url: 'uploadImage',
+        type: 'POST',
+        data: formData,
+        datatype: 'text',
+        contentType : false,
+        processData : false,
+    	success: function(response) {
+    		
+        },
+        failure: function( response ) {
+     	   alert('fail');
+        }
+	});
+	
+	
 	
 	if(type == "coronary")
 	{
@@ -70,4 +100,5 @@ $('#postBtn').on('click',function(){
 	        }
 		});
 	}
+	
 })

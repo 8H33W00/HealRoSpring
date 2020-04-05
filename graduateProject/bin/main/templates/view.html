@@ -53,6 +53,10 @@
 				<i class="fas fa-minus-circle ml-3 mt-2" th:if ="${commentList.nickname} == ${session.userNickName}" th:onclick="'deleteComment(' + ${commentList.id} + ')'"></i>
 			</div>
 		</div>
+		
+		<div class="result-images" id ="imageArea">
+      	   
+		</div>
 		<hr>
 		<div class ="row mt-2">
 			<textarea id= "comment" class="form-control col-10 ml-2"></textarea>
@@ -69,6 +73,7 @@
     	var userNickName = [[${session.userNickName}]];
     	var type = [[${type}]];
     	var Id = [[${id}]];
+    	var url2 = [[${url2}]];
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" ></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>
