@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUploadService {
 
 	
-	private static final String SAVE_PATH = System.getProperty("user.dir")+"/src/main/resources/templates/files/img";
+	private static final String SAVE_PATH = "/home/ec2-user/HealRoProjectSpring/graduateProject"+"/src/main/resources/templates/files/img";
 	public File restore(MultipartFile multipartFile) {
 		
 		try {
