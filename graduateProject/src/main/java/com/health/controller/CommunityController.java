@@ -60,7 +60,7 @@ public class CommunityController {
 		mv.addObject("title",coronary.getTitle());
 		
 		
-		if(coronary.getImg().length() != 0)
+		if(coronary.getImg() != null)
 		{
 			String url2 =  coronary.getImg();
 			mv.addObject("url2",url2);
@@ -89,7 +89,7 @@ public class CommunityController {
 		mv.setViewName("view");
 		mv.addObject("title",dia.getTitle());
 		
-		if(dia.getImg().length() != 0)
+		if(dia.getImg() != null)
 		{
 			String url2 =  dia.getImg();
 			mv.addObject("url2",url2);
@@ -117,7 +117,7 @@ public class CommunityController {
 		mv.setViewName("view");
 		mv.addObject("title",cardio.getTitle());
 		
-		if(cardio.getImg().length() != 0)
+		if(cardio.getImg() != null)
 		{
 			String url2 =  cardio.getImg();
 			mv.addObject("url2",url2);
