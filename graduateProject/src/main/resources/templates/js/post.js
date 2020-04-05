@@ -33,7 +33,7 @@ $('#postBtn').on('click',function(){
         contentType : false,
         processData : false,
     	success: function(response) {
-    		
+    		alert('저장 성공');
         },
         failure: function( response ) {
      	   alert('fail');

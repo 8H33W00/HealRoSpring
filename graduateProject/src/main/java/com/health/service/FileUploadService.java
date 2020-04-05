@@ -12,8 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUploadService {
 
 	
-	private static final String SAVE_PATH = "/home/ec2-user/HealRoProjectSpring/graduateProject"+"/src/main/resources/templates/files/img";
-	public File restore(MultipartFile multipartFile) {
+	private static final String SAVE_PATH = System.getProperty("user.dir")+"/src/main/resources/templates/files/img";
+	public void restore(MultipartFile multipartFile) {
 		
 		try {
 			// 파일 정보
@@ -30,7 +30,7 @@ public class FileUploadService {
 			System.out.println("size : " + size);
 			System.out.println("saveFileName : " + saveFileName);
 			
-			return writeFile(multipartFile, originFilename);
+			 writeFile(multipartFile, originFilename);
 		}
 		catch (IOException e) {
 			// 원래라면 RuntimeException 을 상속받은 예외가 처리되어야 하지만
