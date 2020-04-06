@@ -16,15 +16,6 @@ public class ViewController {
 		return mv;
 	}
 	
-	@GetMapping("/gpsTest")
-	public ModelAndView gpsTest()
-	{
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("gps");
-		
-		return mv;
-	}
-	
 	@GetMapping("/diabetes")
 	public ModelAndView diabetes()
 	{
@@ -137,6 +128,15 @@ public class ViewController {
 	{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("mypage_vascular");
+		return mv;
+		
+	}
+	
+	@GetMapping("/hospital_test")
+	public ModelAndView hospitalTest()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("hospital-test");
 		return mv;
 		
 	}
