@@ -131,4 +131,13 @@ public class ViewController {
 		return mv;
 		
 	}
+	
+	@GetMapping("/hospital_test")
+	public ModelAndView hospitalTest()
+	{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("hospital-test");
+		return mv;
+		
+	}
 }
