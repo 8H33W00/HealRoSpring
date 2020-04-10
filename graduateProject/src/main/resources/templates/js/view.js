@@ -1,15 +1,6 @@
 $( document ).ready(function() {
   
-	if(url2 == 0)
-	{
-		$('#imageArea').hide();
-	}
-	else
-	{
-		alert(url2);
-		var html = "<img src= './files/img/"+ url2 +"'  style='width:250px'>"
-		$('#imageArea').append(html);
-	}
+	
 	
 	$('#updateArea').hide();
 	$('#admin').hide();

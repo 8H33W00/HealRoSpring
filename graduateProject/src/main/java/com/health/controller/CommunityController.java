@@ -58,18 +58,8 @@ public class CommunityController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
 		mv.addObject("title",coronary.getTitle());
-		
-		
-		if(coronary.getImg() != null)
-		{
-			String url2 =  coronary.getImg();
-			mv.addObject("url2",url2);
-		}
-		else
-		{
-			mv.addObject("url2",0);
-		}
-		
+		String url = System.getProperty("user.dir")+"/files/img/" + coronary.getImg();
+		mv.addObject("url",url);
 		mv.addObject("content",coronary.getContent());
 		mv.addObject("nickname",coronary.getNickname());
 		mv.addObject("id",coronary.getId());
@@ -89,15 +79,6 @@ public class CommunityController {
 		mv.setViewName("view");
 		mv.addObject("title",dia.getTitle());
 		
-		if(dia.getImg() != null)
-		{
-			String url2 =  dia.getImg();
-			mv.addObject("url2",url2);
-		}
-		else
-		{
-			mv.addObject("url2",0);
-		}
 		
 		mv.addObject("content",dia.getContent());
 		mv.addObject("nickname",dia.getNickname());
@@ -116,16 +97,6 @@ public class CommunityController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
 		mv.addObject("title",cardio.getTitle());
-		
-		if(cardio.getImg() != null)
-		{
-			String url2 =  cardio.getImg();
-			mv.addObject("url2",url2);
-		}
-		else
-		{
-			mv.addObject("url2",0);
-		}
 		
 		
 		mv.addObject("content",cardio.getContent());
