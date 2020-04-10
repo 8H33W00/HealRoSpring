@@ -7,7 +7,8 @@ $('#postBtn').on('click',function(){
 	
 	var fileValue = $("#file").val().split("\\");
 	var fileName = fileValue[fileValue.length-1];
-	
+	fileName = fileName.replace(/(\s*)/g, "") ;
+	alert(fileName);
 	var data = {
 			'nickname' :userNickName,
 			'title' : $('#title').val(),
