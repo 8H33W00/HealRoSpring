@@ -30,7 +30,8 @@ public class FileUploadService {
 			System.out.println("extensionName : " + extName);
 			System.out.println("size : " + size);
 			System.out.println("saveFileName : " + saveFileName);
-			
+			originFilename = originFilename.replaceAll(" ", "");
+
 			 writeFile(multipartFile, originFilename);
 		}
 		catch (IOException e) {

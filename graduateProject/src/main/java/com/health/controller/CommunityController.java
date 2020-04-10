@@ -58,9 +58,6 @@ public class CommunityController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
 		mv.addObject("title",coronary.getTitle());
-		String url =  coronary.getImg();
-		
-		mv.addObject("url",url);
 		mv.addObject("content",coronary.getContent());
 		mv.addObject("nickname",coronary.getNickname());
 		mv.addObject("id",coronary.getId());
@@ -159,6 +156,8 @@ public class CommunityController {
 		return mv;
 		
 	}
+	
+	
 	
 	
 	
