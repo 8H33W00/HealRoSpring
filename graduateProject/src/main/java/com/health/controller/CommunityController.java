@@ -59,6 +59,7 @@ public class CommunityController {
 		mv.setViewName("view");
 		mv.addObject("title",coronary.getTitle());
 		String url =  coronary.getImg();
+		
 		mv.addObject("url",url);
 		mv.addObject("content",coronary.getContent());
 		mv.addObject("nickname",coronary.getNickname());
