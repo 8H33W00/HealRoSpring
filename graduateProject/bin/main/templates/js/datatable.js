@@ -134,3 +134,9 @@ function cardioView(id)
 {
 	getView("cardioView?id="+id);
 }
+
+function download(img)
+{
+	alert(img);
+	getView("download?img="+img);
+}
