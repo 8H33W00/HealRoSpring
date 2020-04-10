@@ -58,7 +58,7 @@ public class CommunityController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
 		mv.addObject("title",coronary.getTitle());
-		String url = System.getProperty("user.dir")+"/files/img/" + coronary.getImg();
+		String url = "./files/img/" + coronary.getImg();
 		mv.addObject("url",url);
 		mv.addObject("content",coronary.getContent());
 		mv.addObject("nickname",coronary.getNickname());
