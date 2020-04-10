@@ -1,9 +1,21 @@
 package com.health.restcontroller;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +38,7 @@ import com.health.service.CardioService;
 import com.health.service.CommentService;
 import com.health.service.CoronaryTbService;
 import com.health.service.DiabeteService;
+import com.health.service.FileDownloadService;
 import com.health.service.FileUploadService;
 
 
@@ -43,6 +56,8 @@ public class CommunityRestController {
 	
 	@Autowired
 	FileUploadService fileUploadService;
+	@Autowired
+	FileDownloadService fileDownloadService;
 	
 	@Autowired
 	CommentService comService;
@@ -119,5 +134,55 @@ public class CommunityRestController {
 		
 		return file.getOriginalFilename();
 	}
+	private static final String SAVE_PATH = System.getProperty("user.dir")+"/src/main/resources/templates/files/img/";
+	@GetMapping("/download")
+	public ResponseEntity<ByteArrayResource> download(@RequestParam("img")String name, HttpServletResponse response) throws IOException {
+    	try
+        {
+ 
+    		System.out.println(SAVE_PATH + name);
+    	File file = new File( SAVE_PATH + name);
+    	
+    	 if(file.exists())
+         {
+         	System.out.println("YSSSSSSSSSSSSSSSSSSSSS");
+         }
+    	
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
+        headers.add("Pragma", "no-cache");
+        headers.add("Expires", "0");
+      
+
+        Path path = Paths.get(file.getAbsolutePath());
+        ByteArrayResource resource = new ByteArrayResource(Files.readAllBytes(path));
+        
+        
+        file.exists();
+        
+       
+        	
+        	
+        	 return ResponseEntity.ok()
+                     .headers(headers)
+                     .contentLength(file.length())
+                     .contentType(MediaType.parseMediaType("text/plain"))
+                     .body(resource);
+        }
+        catch(Exception e)
+        {
+        	PrintWriter out = response.getWriter();
+        	response.setContentType("text/html; charset=utf-8");
+        	out.println("<script language = 'javascript'>");
+        	out.println("alert('NO FILE');");
+        	out.println("</script>");
+        	out.flush();
+        }
+		return null;
+        
+        
+
+       
+    }
 	
 }
