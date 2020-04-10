@@ -73,7 +73,7 @@
 							<td style ="width : 200px" th:text = "${diabetesList.nickname}" ></td>
 							<td style ="width : 500px" th:text = "${diabetesList.title} " th:onclick ="'diabeteView('+ ${diabetesList.id}  +')'"></td>
 							<td th:text = "${diabetesList.time}"></td>
-							<td th:if ="${diabetesList.img} != null "><i class="fas fa-file"></i></td>
+							<td th:if ="${diabetesList.img} != null " th:data = ${diabetesList.img} th:onclick = "download(this.getAttribute('data') )"><i class="fas fa-file"></i></td>
 							<td th:if ="${diabetesList.img} == null "></td>
 						</tr>
 					</tbody>
@@ -97,7 +97,7 @@
 							<td style ="width : 200px" th:text = "${cardioList.nickname}" ></td>
 							<td style ="width : 500px" th:text = "${cardioList.title}" th:onclick ="'cardioView('+ ${cardioList.id}  +')'"></td>
 							<td th:text = "${cardioList.time}"></td>
-							<td th:if ="${cardioList.img} != null "><i class="fas fa-file"></i></td>
+							<td th:if ="${cardioList.img} != null " th:data = ${cardioList.img} th:onclick = "download(this.getAttribute('data') )"><i class="fas fa-file"></i></td>
 							<td th:if ="${cardioList.img} == null "></td>
 						</tr>
 					</tbody>
