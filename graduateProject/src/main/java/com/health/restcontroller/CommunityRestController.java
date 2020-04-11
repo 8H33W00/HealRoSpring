@@ -136,7 +136,7 @@ public class CommunityRestController {
 	}
 	private static final String SAVE_PATH = System.getProperty("user.dir")+"/src/main/resources/templates/files/img/";
 	@GetMapping("/download")
-	public ResponseEntity<ByteArrayResource> download(@RequestParam("img")String name, HttpServletResponse response) throws IOException {
+	public ResponseEntity<ByteArrayResource> download(@RequestParam("img" )String name, HttpServletResponse response) throws IOException {
     	try
         {
  

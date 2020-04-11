@@ -1,7 +1,12 @@
 $( document ).ready(function() {
   
 	
-	
+	if(img == null)
+		{
+			$('#imageArea').hide();
+			$('#hr').hide();
+		
+		}
 	$('#updateArea').hide();
 	$('#admin').hide();
 	$(function () {
@@ -230,6 +235,11 @@ $('#commentBtn').on('click',function(){
 	});
 })
 
+$('#imageArea').on('click',function(){
+
+		getView("download?img="+img);
+
+})
 
 
 /**
