@@ -43,6 +43,12 @@
 		</div>
 		
 		
+		<div class ="mb-2 mt-2"id ="imageArea" style="width:300px; height:50px; border-color: black; border: solid 1px; background-color: white" >
+			<h1 style ="font-weight: bold;">이미지 불러오기</h1>
+		
+		</div>
+		<hr id ="hr">
+		
 		<div class="row mt-2" th:each ="commentList:${commentList}">
 			<div class="row">
 				<i class="fas fa-user ml-4 mt-3"></i>
@@ -69,7 +75,7 @@
     	var userNickName = [[${session.userNickName}]];
     	var type = [[${type}]];
     	var Id = [[${id}]];
-    	var url2 = [[${url2}]];
+    	var img = [[${img}]];
 </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js" ></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" ></script>

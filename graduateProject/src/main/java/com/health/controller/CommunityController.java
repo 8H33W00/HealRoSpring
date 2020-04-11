@@ -57,6 +57,7 @@ public class CommunityController {
 		CoronaryTb coronary = coronaryService.findCoronaryTbById(id);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
+		mv.addObject("img",coronary.getImg());
 		mv.addObject("title",coronary.getTitle());
 		mv.addObject("content",coronary.getContent());
 		mv.addObject("nickname",coronary.getNickname());
@@ -76,7 +77,7 @@ public class CommunityController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
 		mv.addObject("title",dia.getTitle());
-		
+		mv.addObject("img",dia.getImg());
 		
 		mv.addObject("content",dia.getContent());
 		mv.addObject("nickname",dia.getNickname());
@@ -95,7 +96,7 @@ public class CommunityController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("view");
 		mv.addObject("title",cardio.getTitle());
-		
+		mv.addObject("img",cardio.getImg());
 		
 		mv.addObject("content",cardio.getContent());
 		mv.addObject("nickname",cardio.getNickname());

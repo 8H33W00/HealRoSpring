@@ -1,5 +1,6 @@
 package com.health.service;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +29,18 @@ public class CoronaryTbService {
 	public void delete(int id)
 	{
 		comRepo.deleteComment(1, id);
+		CoronaryTb co = coronaryRepo.findById(id).get();
+		String path = System.getProperty("user.dir")+"/src/main/resources/templates/files/img/" + co.getImg();
 		coronaryRepo.deleteById(id);
+		System.out.println("PATH "+path);
+		try {
+			File file = new File(path);
+			file.delete();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 	
 	public List<CoronaryTb> findCoronaryTb()
