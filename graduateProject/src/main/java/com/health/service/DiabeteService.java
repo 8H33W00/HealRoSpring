@@ -42,7 +42,7 @@ public class DiabeteService {
 		catch (Exception e) {
 			// TODO: handle exception
 		}
-		diabeteRepo.deleteById(id);
+		
 	}
 	
 	public List<DiabetesTb> findDiabetesTb()

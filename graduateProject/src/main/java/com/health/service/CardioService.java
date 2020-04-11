@@ -40,7 +40,7 @@ public class CardioService {
 		catch (Exception e) {
 			// TODO: handle exception
 		}
-		cardioRepo.deleteById(id);
+		
 	}
 	
 	public List<CardioTb> findCardioTb()
