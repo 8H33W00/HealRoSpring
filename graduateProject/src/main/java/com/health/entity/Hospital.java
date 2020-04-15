@@ -15,5 +15,7 @@ public class Hospital {
 	String hospitalAddr;
 	String hospitalWeb;
 	String hospitalPhone;
+	java.math.BigDecimal hospitalLatitude;
+	java.math.BigDecimal hospitalLongitude;
 	
 }
