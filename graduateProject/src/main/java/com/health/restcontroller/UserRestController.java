@@ -1,6 +1,7 @@
 package com.health.restcontroller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -64,8 +65,69 @@ public class UserRestController {
 		if(check == 1)
 		{
 			session.setAttribute("userNickName", userService.searchObj(user.getUserId()).getUserName());
+			session.setAttribute("cardio", userService.searchObj(user.getUserId()).getCardio());
+			session.setAttribute("coronary", userService.searchObj(user.getUserId()).getCoronary());
+			session.setAttribute("diabete", userService.searchObj(user.getUserId()).getDiabete());
+			session.setAttribute("cardioPast", userService.searchObj(user.getUserId()).getCardioPast());
+			session.setAttribute("coronaryPast", userService.searchObj(user.getUserId()).getCoronaryPast());
+			session.setAttribute("diabetePast", userService.searchObj(user.getUserId()).getDiabetePast());
 		}
 		return check;
+		
+	}
+	
+	@PostMapping("/findPwd")
+	public String findPwd(@RequestBody User user)
+	{
+		String msg = userService.findPwd(user);
+		return msg;
+		
+	}
+	
+	@PostMapping("/recordResult")
+	public String recordResult(@RequestBody Map<String,String> info, HttpSession session, HttpServletResponse response)
+	{
+		String userId = (String) session.getAttribute("userNickName");
+		String diseaseName = info.get("disease");
+		String odd = info.get("odd");
+		Float result = Float.valueOf(odd).floatValue();
+		int diseaseType = -1;
+		Float past = null;
+		System.out.println(userId);
+		System.out.println(diseaseName);
+		System.out.println(result);
+		
+		if(diseaseName.equals("cardio")) {
+			diseaseType = 0;
+			past = (Float) session.getAttribute("cardio");
+			System.out.println(past);
+			if(past != null) {
+				userService.recordResult(10,past,userId);
+				session.setAttribute("cardioPast", past);
+			}
+			session.setAttribute("cardio", result);
+		}
+		else if(diseaseName.equals("coronary")) {
+			diseaseType = 1;
+			past = (Float) session.getAttribute("coronary");
+			if(past != null) {
+				userService.recordResult(11,past,userId);
+				session.setAttribute("coronaryPast", past);
+			}
+			session.setAttribute("coronary", result);
+		}
+		else if(diseaseName.equals("diabete")) {
+			diseaseType = 2;
+			past = (Float) session.getAttribute("diabete");
+			if(past != null) {
+				userService.recordResult(12,past,userId);
+				session.setAttribute("diabetePast", past);
+			}
+			session.setAttribute("diabete", result);
+		}
+		
+		userService.recordResult(diseaseType,result,userId);
+		return userId;
 		
 	}
 	

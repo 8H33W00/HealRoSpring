@@ -10,11 +10,14 @@ function signUp()
 	$('#validselUserNm1').hide();
 	$('#validselUserNm2').hide();
 	$('#validselUserNm3').hide();
+	$('#validselUserFind').hide();
+	
 	
 	var userId = $('#selUserId').val();
 	var userPwd = $('#selUserPwd').val();
 	var userPwd2 = $('#selUserPwd2').val();
 	var userName = $('#selUserNm').val();
+	var userFind = $('#selUserFind').val();
 	
 	var isValid = true;
 	
@@ -65,6 +68,11 @@ function signUp()
 
 	}
 	
+	if ( userFind == "" || !findCheck(userFind)){
+		isValid = false;
+		$('#validselUserFind').show();
+	}
+	
 	if(userName == "" || !nickNameCheck(userName))
 	{
 		isValid = false;
@@ -87,7 +95,8 @@ function signUp()
 	var data ={
 			userId : userId,
 			userPwd : userPwd,
-			userName : userName
+			userName : userName,
+			userFind : userFind
 	};
 	
 	console.log(data);
@@ -119,6 +128,78 @@ function signUp()
     		}
     		else{
     			alert('에러가 발생했습니다.');
+    		}
+        },
+        failure: function( response ) {
+     	   alert('fail');
+        }
+	});
+	}
+}
+
+function findPwd()
+{
+	$('#validfUserId1').hide();
+	$('#validfUserId2').hide();
+	$('#validfUserFind').hide();
+	
+	
+	var userId = $('#fUserId').val();
+	var userFind = $('#fUserFind').val();
+	
+	var isValid = true;
+	
+	if(userId == "" || !idCheck(userId))
+	{
+		isValid = false;
+		
+		if(userId == "")
+		{
+			$('#validfUserId1').show();
+		}
+		
+		else if(!idCheck(userId))
+		{
+			$('#validfUserId2').show();
+		}
+		
+	}
+	
+	if ( userFind == "" || !findCheck(userFind)){
+		isValid = false;
+		$('#validfUserFind').show();
+	}
+	
+	if(isValid)
+	{
+		
+	var data ={
+			userId : userId,
+			userFind : userFind
+	};
+	
+	console.log(data);
+	
+	$.ajax({
+        url: 'findPwd',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+	    xhrFields: {
+	        withCredentials: true
+	    },
+    	success: function(response) {
+    		console.log(response);
+    		if(response == "Password Query is not correct")
+    		{
+    			alert(response)
+    			}
+    		else if(response == "There is no such ID")
+    		{
+    			alert(response)
+    			}
+    		else{
+    			alert("Your Password : " + response);
     		}
         },
         failure: function( response ) {
@@ -209,6 +290,12 @@ function passwordCheck(x)
 function nickNameCheck(x)
 {
         var reg = /^[a-zA-Z0-9]{1,14}$/;
+        return reg.test(x);
+}
+
+function findCheck(x)
+{
+        var reg = /^[0-9]{11,11}$/;
         return reg.test(x);
 }
 
