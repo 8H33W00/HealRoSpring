@@ -144,7 +144,7 @@ $("#go").click(function(){
 		        	$('#go').empty();
 					var html = "<button class='btn btn-primary btn-lg btn-block'>Go</button>"
 					$('#go').append(html);
-					
+					recordResult(data.odd);
 		        	var result = data.odd +"%";
 		        	$('#textArea').empty();
 		        	$('#textArea').append(result);
@@ -192,4 +192,26 @@ function calculate(){
 		$('#target').append(html);
 		
 	}
+}
+
+function recordResult(x){
+	data ={
+			odd : x,
+			disease : "coronary"
+			};
+	$.ajax({
+        url: 'recordResult',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+	    xhrFields: {
+	        withCredentials: true
+	    },
+    	success: function(response) {
+    		console.log(response);
+        },
+        failure: function( response ) {
+     	   alert('fail');
+        }
+	});
 }

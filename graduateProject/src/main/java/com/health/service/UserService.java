@@ -73,4 +73,44 @@ public class UserService {
 			return 3;
 		}
 	}
+	
+	public String findPwd(User user)
+	{
+		System.out.println("----------------"+user);
+		if(userRepo.findByUserId2(user.getUserId()) != null)
+		{
+			User checkUser = userRepo.findByUserId2(user.getUserId());
+			System.out.println("----------------"+checkUser);
+			if(user.getUserFind().equals(checkUser.getUserFind()))
+			{
+				return checkUser.getUserPwd();
+			}
+			return "Password Query is not correct";
+		}
+		else
+		{
+			return "There is no such ID";
+		}
+	}
+	
+	public void recordResult(int diseaseType, Float odd, String userNickName) {
+		if(diseaseType == 0) {
+			userRepo.recordResultCardio(odd, userNickName);
+		}
+		else if(diseaseType == 1) {
+			userRepo.recordResultCoronary(odd, userNickName);
+		}
+		else if(diseaseType == 2) {
+			userRepo.recordResultDiabete(odd, userNickName);
+		}
+		else if(diseaseType == 10) {
+			userRepo.recordResultCardioPast(odd, userNickName);
+		}
+		else if(diseaseType == 11) {
+			userRepo.recordResultCoronaryPast(odd, userNickName);
+		}
+		else if(diseaseType == 12) {
+			userRepo.recordResultDiabetePast(odd, userNickName);
+		}
+	}
 }
