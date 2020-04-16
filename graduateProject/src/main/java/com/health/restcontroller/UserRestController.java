@@ -65,16 +65,11 @@ public class UserRestController {
 		if(check == 1)
 		{
 			session.setAttribute("userNickName", userService.searchObj(user.getUserId()).getUserName());
-			session.setAttribute("cardio", userService.searchObj(user.getUserId()).getCardio());
-			session.setAttribute("coronary", userService.searchObj(user.getUserId()).getCoronary());
-			session.setAttribute("diabete", userService.searchObj(user.getUserId()).getDiabete());
-			session.setAttribute("cardioPast", userService.searchObj(user.getUserId()).getCardioPast());
-			session.setAttribute("coronaryPast", userService.searchObj(user.getUserId()).getCoronaryPast());
-			session.setAttribute("diabetePast", userService.searchObj(user.getUserId()).getDiabetePast());
 		}
 		return check;
 		
 	}
+	
 	
 	@PostMapping("/findPwd")
 	public String findPwd(@RequestBody User user)
@@ -130,6 +125,4 @@ public class UserRestController {
 		return userId;
 		
 	}
-	
-	
 }

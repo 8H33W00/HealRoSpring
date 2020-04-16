@@ -39,7 +39,6 @@ public class UserService {
 		return false;
 	}
 	
-	
 	public boolean searchName(String userName)
 	{
 		if(userRepo.findByUserName(userName) != null)
