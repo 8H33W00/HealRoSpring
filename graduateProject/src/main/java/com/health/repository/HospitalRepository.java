@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.health.entity.Hospital;
 
-public interface HospitalRepository extends JpaRepository<Hospital, String> {
+public interface HospitalRepository extends JpaRepository<Hospital, Integer> {
 	
 //	List<Hospital> findByHospitals();
 }
