@@ -18,6 +18,17 @@ public class MapController {
 	@Autowired
 	HospitalRepository hosRepo;
 	
+	@GetMapping("/https")
+	public ModelAndView https(){
+		
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("check", 1);
+		mv.setViewName("https");
+		
+		return mv;
+	}
+	
 	
 	@GetMapping("/map")
 	public ModelAndView map() {
