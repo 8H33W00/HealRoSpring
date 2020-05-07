@@ -14,4 +14,6 @@ public class HospitalService {
 
 	@Autowired
 	HospitalRepository hosrepo;
+	
+//	public List<>
 }
