@@ -123,13 +123,6 @@ public class ViewController {
 		return mv;
 		
 	}
-	@GetMapping("/mypage_vascular")
-	public ModelAndView mypageVascular()
-	{
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("mypage_vascular");
-		return mv;
-		
-	}
+	
 	
 }
