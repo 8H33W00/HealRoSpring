@@ -23,7 +23,7 @@
 	var myChart = new Chart(ctx, {
 		type: 'bar',
 		data: {
-			labels: ['Recent Result', 'Past Result'],
+			labels: [recentDate, pastDate],
 			datasets: [{
 				label: '% of Prediction',
 				data: [recentResult,pastResult],
