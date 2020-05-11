@@ -77,10 +77,10 @@ public class UserRestController {
 			session.setAttribute("cardioDate", resultService.searchCardio(userNickName).getRecentDate());
 			session.setAttribute("cardioPast", resultService.searchCardio(userNickName).getPastResult());
 			session.setAttribute("cardioPastDate", resultService.searchCardio(userNickName).getPastDate());
-			session.setAttribute("diabete", resultService.searchDiabetes(userNickName).getRecentResult());
-			session.setAttribute("diabeteDate", resultService.searchDiabetes(userNickName).getRecentDate());
-			session.setAttribute("diabetePast", resultService.searchDiabetes(userNickName).getPastResult());
-			session.setAttribute("diabetePastDate", resultService.searchDiabetes(userNickName).getPastDate());
+			session.setAttribute("diabetes", resultService.searchDiabetes(userNickName).getRecentResult());
+			session.setAttribute("diabetesDate", resultService.searchDiabetes(userNickName).getRecentDate());
+			session.setAttribute("diabetesPast", resultService.searchDiabetes(userNickName).getPastResult());
+			session.setAttribute("diabetesPastDate", resultService.searchDiabetes(userNickName).getPastDate());
 			
 		}
 		return check;
