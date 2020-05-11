@@ -4,7 +4,6 @@ $( document ).ready(function() {
   
 });
 
-
 function setRestUrl(){
 	var wholeUrl = window.location.href;
 	var url = "http://"+wholeUrl.split("/")[2];
@@ -57,3 +56,5 @@ function diabetesPredict()
 		getView('login');
 	}
 }
+
+

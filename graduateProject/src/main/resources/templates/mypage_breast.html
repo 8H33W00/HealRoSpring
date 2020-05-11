@@ -33,7 +33,7 @@
                 </a>
             </span>
             <span class="header-btn__title">
-              Heart disease
+              Coronary Artery
             </span>
           </li>
           <li class="MyPage__header-btn header-btn">
@@ -53,19 +53,10 @@
               </a>
             </span>
             <span class="header-btn__title">
-              Breast cancer
+              Cardio Vascular
             </span>
           </li>
-          <li class="MyPage__header-btn header-btn">
-            <span class="header-btn__icon">
-                <a href="/mypage_brain" class="MyPage__header-link">
-                    <i class="far fa-meh-blank fa-2x"></i>
-              </a>
-            </span>
-            <span class="header-btn__title">
-              Brain disease
-            </span>
-          </li>
+          
           <li class="MyPage__header-btn header-btn">
             <span class="header-btn__icon">
                 <a href="/mypage_vascular" class="MyPage__header-link">
@@ -73,34 +64,77 @@
               </a>
             </span>
             <span class="header-btn__title">
-              Vascular disease
+              Hospital
             </span>
           </li>
         </ul>
       </header>
+      <div class="chart">
+      <br><br><br><br>
+      	<span class="predic">predict percentage:
+      		<button type="button" class="btn btn-outline-primary text-bold" id="visual" th:text="${session.cardio}" role="button"></button>
+		</span>
+			<div class="container">
+				<span><canvas id="myChart" width="500" height="400" ></canvas></span>
+			</div>
+      </div>
+      <div class="visual">
+      <br><br><br><br>
+       		<div id="ment1">이전의 검사결과와 비교하여 30% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에 유의하십시오.<br><br></div>
+       		<div id="ment2">이전의 검사결과와 비교하여 10% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에 유의하십시오.<br><br></div>
+       		<div id="ment3">이전의 검사결과와 비교하여 비슷한 수준입니다.<br>하단의 예방책들을 확인하여 건강 관리를 시작해보세요.<br><br></div>
+       		<div id="ment4">이전의 검사결과와 비교하여 10% 이상 좋아졌습니다.<br>좋은 현상입니다. 더욱 더 신경써 다음 단계를 성취해보세요.<br><br></div>
+       		<div id="ment5">이전의 검사결과와 비교하여 30% 이상 좋아졌습니다.<br>건강관리에 있어 최고 수준입니다. 커뮤니티를 통해 방법을 공유하여 다른 사람들에게 비법을 전수해봅시다.<br><br></div>
+       		<div id="ment6">비교할 검사결과들이 없습니다.<br>질병 예측 서비스를 이용하고 자신의 건강 상태를 꾸준히 관리해보세요.<br><br></div>
+       		<div class="image"> <img id=stage width="300" height="300"><br><br><br>Icon made by Freepik from www.flaticon.com<br><br><br></div>
+		</div>
+      <div>
+      		<span class="prevent">disease prevention: </span>
+      </div>
+    
+	<div id="notyet">
+	진행된 검사가 없습니다. 질병 예측 서비스를 이용해 검사를 실시해보세요.
+	</div>
+	<div id ="primary">
+	심혈관 지방을 1차적으로 예방하는 가장 중요한 방법은 평생 건강한 생활습관을 증진시키는 것이다.<br><br>
+
+	1. 음식<br>
+	모든 성인들은 야채, 과일, 견과류, 통곡물, 기름기 없는 야채의 섭취를 강조하는 건강한 식단을 섭취해야 한다.
+		또는 동물성 단백질, 생선, 트랜스 지방, 붉은 고기 가공육, 정제된 탄수화물, 설탕 함유 음료 섭취를 최소화한다.
+		과체중/비만 성인의 경우 체중 감량을 달성하고 유지하기 위해 상담과 칼로리 제한을 권고한다.<br><br>
 	
-	<li>
-      <span class="predic">predict percentage: </span>
-    </li>
-    <li>
-      <span class="prevent">disease prevention: </span>
-    </li>
+	2. 운동<br>
+	지속적인 운동은 필수다. 하루 30분 이상 땀이 날 정도로 운동하는 게 좋다. 한 번에 30분 운동하기 어렵다면 시간을 나누어 총 30분을 채운다. 걷기, 달리기, 자전거 타기 등 유산소 운동을 하는 게 좋다. 근육을 지속적으로 긴장시키는 운동은 혈압을 높이고 심장에 부담을 줄 수 있어 주의한다.<br><br>
 	
-	<p>1. 금연. 폐암의 예방법은 금연 이외에는 확실한 것이 없으며, 약 90%의 폐암이 금연을 함으로써 예방이 가능하다.
-	아울러 흡연은 다른 발암물질의 노출과 상승작용을 하는 것으로 알려져 있다. 특히 청소년 시기에 흡연을 시작하지 않도로고 하는 것이 중요하다.
-	폐암은 흡연량과 흡연기간에 비례해서 발생률이 증가하고 담배를끊은 이후 담배를 다시 피우지 않더라도 최대 20년까지는 폐암의 위험도가 증가하기
-	때문에 조기에 금연하는 것이 무엇보다 중요하다.<br>
-	<p></p>
-	2. 정기 건강 검진. 하루 2갑 이상 담배를 피운 45세 이상의 남자와 같이 폐암 발생 가능성이 높은 경우에는 정기적인 건강검진을 통한조기진단이
-	중요하므로 전문의 권고에 따라 건강검진을 받도록 한다.<br>
-	<p></p>
-	3. 위험요인 노출 감소. 환경적 요인(간접흡연 등), 직업적 요인(석면, 비소, 크롬 등), 방사선 동위원소(우라늄, 라돈 등), 등 위험요인에
-	대한 노출을 줄이도록 한다.<br>
-	<p></p>
-	4. 폐암 예방과 음식. 몇몇 학자는 음식이 폐암의 발생을 줄일 수 있는가에 대해 관심을 가지고 연구를 진행하였으나 아직까지 폐암의 예방과 음식과의
-	관련성에 대해서는 특별히 알려진 것은 없다. 따라서 현재 상황에서 권장할 수 있는 폐암 예방법으로는 금연 이외에는 확실한 것이 없으며, 필요 이상의
-	미량 영양소들을 폐암 예방 목적으로 복용하는 것은 오히려 해가 될 수도 있다. ㄱ드러므로, 기존의 일반적인 식생활을 유지하면서 토마토, 양배추,
-	브로콜리 등 신선한 과일과 채소를 포함한 균형있는 영양을 섭취하는 것이 바람직하다.
+	3. 금연 및 금주<br>
+	금연·금주도 해야 한다. 흡연하면 혈관이 수축하면서 혈액 순환이 잘 안 되고 혈전(피떡)이 생길 수 있다. 이로 인해 심장혈관이 막힐 수 있다. 흡연하는 심장질환자의 사망률은 금연자보다 2.2배 높다는 연구결과가 있다. 금연 1년 후면 심장질환 위험성이 절반으로 준다. 과도한 음주도 혈압을 높여 심장혈관을 막거나 부정맥을 유발할 수 있다.<br><br>
+	
+	4. 약물복용<br>
+	아스피린을 신중하게 긴 텀을 두고 주기적으로 복용한다.
+	</div>
+	
+	<div id="secondary">
+	심혈관질환에 걸릴 확률이 비교적 높은 경우 다음과 같은 예방책들이 있다.<br><br>
+	1.  금연<br>
+	금연의 목표는 완전한 흠연 금지뿐 아니라 간접 흡연 노출도 금지하는 것을 의미한다.<br><br>
+	
+	2. 혈압조절<br>
+	일반인의 혈압목표 수치는 < 140/90mm Hg이고, 당뇨나 신장질환이 있는 경우는 < 130/80mm Hg 이다. 모든 환자는 식생활습관을 개선해 체중조절, 신체활동 증진, 음주는 적당량, 염분섭취 감소, 신선한 야채 및 과일 섭취 및 저지방 유제품을 섭취 하도록 한다. I (B)혈압수치가 ≥≥140/90mm Hg (또는 당뇨나 신장병인 경우는 130/80mm Hg)인 경우 강압제로서 혈압 조절을 한다.<br><br>
+	
+	3. 음식<br>
+	불포화지방산·미정제곡류·야채·과일·오메가-3 지방산등은 관상동맥질환 보호 작용이 있다. 소량-중등도 알코올섭취는(5-25 g/일)심혈관 질환에서 심혈관 사망률 및 총사망률 감소 효과가 있다.<br><br>
+	
+	4. 운동 및 체중조절<br>
+	육제적활동의 목표는 매일 (최소한 5일/주) 30분간 운동이다. 연구결과에 의하면 전혀 운동하지 않는 것보다 조금이라도 하는 것이 좋으며, 활동량이 증가할수록 추가이득이 발생한다고 한다.
+	체중관리의 목표는 BMI 18.5-24.9kg/m2 이고 허리둘레는 남자 <101.6cm (40인치), 여자<88.9cm (35인치)이다.<br><br>
+	
+	5. 당뇨관리<br>
+	당뇨관리의 목표치는 당화혈색소(HbA1c) 수치 < 7% 이다.식생활습관개선과 약물치료로 정상에 근접한 HbA1c 수치를 달성한다.I (B) ▲다른 위험인자 들 (즉, 육체적활동·체중관리·혈압조절·콜레스테롤)을 집중적으로 관리한다.<br><br>
+	
+	6. 약물복용<br>
+	저용량 아스피린, 항혈소판제제 및 항응고제, 베타차단제 등 약물을 적절히 복용하고 인플루엔자 백신을 반드시 접종한다.
+	</div>
+	</main>
 	
 	</div>
 </div>
@@ -109,6 +143,14 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  	  
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="./js/common.js"></script>
+<script th:inline="javascript">
+var recentResult = /*[[${session.cardio}]]*/ "";
+var pastResult = /*[[${session.cardioPast}]]*/ "";
+var recentDate = /*[[${session.cardioDate}]]*/ "";
+var pastDate = /*[[${session.cardioPastDate}]]*/ "";
+</script>
+<script th:inline="javascript" src="./js/mypage_result.js"></script>
 </body>
 </html>

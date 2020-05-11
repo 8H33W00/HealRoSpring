@@ -17,13 +17,6 @@ public class User {
 	String userPwd;
 	String userName;
 	String userFind;
-	Float test;
-	Float cardio;
-	Float cardioPast;
-	Float coronary;
-	Float coronaryPast;
-	Float diabete;
-	Float diabetePast;
 	
 }
 

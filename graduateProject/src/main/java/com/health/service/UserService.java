@@ -13,12 +13,15 @@ public class UserService {
 	
 	@Autowired
 	UserRepository userRepo;
+	@Autowired
+	ResultService resultService;
 	
 	public boolean create(User user)
 	{
 		System.out.println("+++++++++++++++"+user);
 		try {
 			userRepo.save(user);
+			resultService.create(user.getUserName());
 			return true;
 		}
 		catch(Exception e){
@@ -93,24 +96,4 @@ public class UserService {
 		}
 	}
 	
-	public void recordResult(int diseaseType, Float odd, String userNickName) {
-		if(diseaseType == 0) {
-			userRepo.recordResultCardio(odd, userNickName);
-		}
-		else if(diseaseType == 1) {
-			userRepo.recordResultCoronary(odd, userNickName);
-		}
-		else if(diseaseType == 2) {
-			userRepo.recordResultDiabete(odd, userNickName);
-		}
-		else if(diseaseType == 10) {
-			userRepo.recordResultCardioPast(odd, userNickName);
-		}
-		else if(diseaseType == 11) {
-			userRepo.recordResultCoronaryPast(odd, userNickName);
-		}
-		else if(diseaseType == 12) {
-			userRepo.recordResultDiabetePast(odd, userNickName);
-		}
-	}
 }

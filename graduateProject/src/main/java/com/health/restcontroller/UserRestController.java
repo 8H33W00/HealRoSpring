@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.health.entity.User;
+import com.health.service.ResultService;
 import com.health.service.UserService;
 
 @RestController
@@ -21,6 +22,8 @@ public class UserRestController {
 
 	@Autowired
 	UserService userService;
+	@Autowired
+	ResultService resultService;
 	
 	/**
 	 * 
@@ -64,7 +67,21 @@ public class UserRestController {
 		int check = userService.login(user);
 		if(check == 1)
 		{
-			session.setAttribute("userNickName", userService.searchObj(user.getUserId()).getUserName());
+			String userNickName = userService.searchObj(user.getUserId()).getUserName();
+			session.setAttribute("userNickName", userNickName);
+			session.setAttribute("coronary", resultService.searchCoronary(userNickName).getRecentResult());
+			session.setAttribute("coronaryDate", resultService.searchCoronary(userNickName).getRecentDate());
+			session.setAttribute("coronaryPast", resultService.searchCoronary(userNickName).getPastResult());
+			session.setAttribute("coronaryPastDate", resultService.searchCoronary(userNickName).getPastDate());
+			session.setAttribute("cardio", resultService.searchCardio(userNickName).getRecentResult());
+			session.setAttribute("cardioDate", resultService.searchCardio(userNickName).getRecentDate());
+			session.setAttribute("cardioPast", resultService.searchCardio(userNickName).getPastResult());
+			session.setAttribute("cardioPastDate", resultService.searchCardio(userNickName).getPastDate());
+			session.setAttribute("diabete", resultService.searchDiabetes(userNickName).getRecentResult());
+			session.setAttribute("diabeteDate", resultService.searchDiabetes(userNickName).getRecentDate());
+			session.setAttribute("diabetePast", resultService.searchDiabetes(userNickName).getPastResult());
+			session.setAttribute("diabetePastDate", resultService.searchDiabetes(userNickName).getPastDate());
+			
 		}
 		return check;
 		
@@ -79,50 +96,4 @@ public class UserRestController {
 		
 	}
 	
-	@PostMapping("/recordResult")
-	public String recordResult(@RequestBody Map<String,String> info, HttpSession session, HttpServletResponse response)
-	{
-		String userId = (String) session.getAttribute("userNickName");
-		String diseaseName = info.get("disease");
-		String odd = info.get("odd");
-		Float result = Float.valueOf(odd).floatValue();
-		int diseaseType = -1;
-		Float past = null;
-		System.out.println(userId);
-		System.out.println(diseaseName);
-		System.out.println(result);
-		
-		if(diseaseName.equals("cardio")) {
-			diseaseType = 0;
-			past = (Float) session.getAttribute("cardio");
-			System.out.println(past);
-			if(past != null) {
-				userService.recordResult(10,past,userId);
-				session.setAttribute("cardioPast", past);
-			}
-			session.setAttribute("cardio", result);
-		}
-		else if(diseaseName.equals("coronary")) {
-			diseaseType = 1;
-			past = (Float) session.getAttribute("coronary");
-			if(past != null) {
-				userService.recordResult(11,past,userId);
-				session.setAttribute("coronaryPast", past);
-			}
-			session.setAttribute("coronary", result);
-		}
-		else if(diseaseName.equals("diabete")) {
-			diseaseType = 2;
-			past = (Float) session.getAttribute("diabete");
-			if(past != null) {
-				userService.recordResult(12,past,userId);
-				session.setAttribute("diabetePast", past);
-			}
-			session.setAttribute("diabete", result);
-		}
-		
-		userService.recordResult(diseaseType,result,userId);
-		return userId;
-		
-	}
 }
