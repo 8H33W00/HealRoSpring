@@ -1,0 +1,11 @@
+@charset "EUC-KR";
+
+h1 {
+	text-align: center;
+}
+
+.info {
+	color: grey;
+	font-size: 0.3rem;
+	text-align: center;
+}
