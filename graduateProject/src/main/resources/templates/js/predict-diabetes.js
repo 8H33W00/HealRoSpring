@@ -129,7 +129,7 @@ function calculate(){
 function recordResult(x){
 	data ={
 			odd : x,
-			disease : "diabete"
+			disease : "diabetes"
 			};
 	$.ajax({
         url: 'recordResult',
