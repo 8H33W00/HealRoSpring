@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <title>Predict Heart Disease</title>
+    <title>3 Hospitals close to you!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -11,27 +12,11 @@
     <link rel="stylesheet" type="text/css" href="./css/login.css">
     <link rel="stylesheet" type="text/css" href="./css/mypage.css">
     <link rel="stylesheet" type="text/css" href="./css/mypage_vascular.css">
-    <title>vascular reports</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<<<<<<< HEAD
-<div class ="container">
-	<div th:replace = "./common/topbar :: topbar"></div> 
-	<div class="jumbotron">
-	
-	
-	<header class="header">
-      <div class="header__header-column">
-        <h1 class="header__title">My Page</h1>
-      </div>
-    </header>
-    <main class="MYPAGE">
-      <header class="MyPage__header">
-<ul class="MyPage__header-list">
-          <li class="MyPage__header-btn header-btn">
-=======
 <div class="container">
     <div th:replace="./common/topbar :: topbar"></div>
     <div class="jumbotron">
@@ -46,19 +31,13 @@
             <header class="MyPage__header">
                 <ul class="MyPage__header-list">
                     <li class="MyPage__header-btn header-btn">
->>>>>>> a2093e537d1c3d09c12d4a0a78b673daa329fbe5
             <span class="header-btn__icon">
                 <a href="/mypage_heart" class="MyPage__header-link">
                     <i class="far fa-heart fa-2x"></i>
                 </a>
             </span>
-<<<<<<< HEAD
-            <span class="header-btn__title">
-              Coronary Artery
-=======
                         <span class="header-btn__title">
-              Heart disease
->>>>>>> a2093e537d1c3d09c12d4a0a78b673daa329fbe5
+              Coronary Artery
             </span>
                     </li>
                     <li class="MyPage__header-btn header-btn">
@@ -74,55 +53,32 @@
                     <li class="MyPage__header-btn header-btn">
             <span class="header-btn__icon">
                 <a href="/mypage_breast" class="MyPage__header-link">
-                    <i class="fas fa-lightbulb fa-2x"></i>
+                    <i class="far fa-lightbulb fa-2x"></i>
               </a>
             </span>
-<<<<<<< HEAD
-            <span class="header-btn__title">
+                        <span class="header-btn__title">
               Cardio Vascular
             </span>
-          </li>
-          
-          <li class="MyPage__header-btn header-btn">
-=======
-                        <span class="header-btn__title">
-              Breast cancer
-            </span>
                     </li>
+
                     <li class="MyPage__header-btn header-btn">
             <span class="header-btn__icon">
-                <a href="/mypage_brain" class="MyPage__header-link">
-                    <i class="far fa-meh-blank fa-2x"></i>
+                <a href="/hospital_https" class="MyPage__header-link">
+                    <i class="fas fa-hospital fa-2x"></i>
               </a>
             </span>
                         <span class="header-btn__title">
-              Brain disease
-            </span>
-                    </li>
-                    <li class="MyPage__header-btn header-btn">
->>>>>>> a2093e537d1c3d09c12d4a0a78b673daa329fbe5
-            <span class="header-btn__icon">
-                <a href="/mypage_vascular" class="MyPage__header-link">
-                    <i class="far fa-hospital fa-2x"></i>
-              </a>
-            </span>
-<<<<<<< HEAD
-            <span class="header-btn__title">
               Hospital
-=======
-                        <span class="header-btn__title">
-              Vascular disease
->>>>>>> a2093e537d1c3d09c12d4a0a78b673daa329fbe5
             </span>
                     </li>
                 </ul>
             </header>
 
-			<br />
-            <h1>추천 병원 목록</h1>
-            <br />
+            <br/>
+            <h1 id="title-list">추천 병원 목록</h1>
+            <br/>
             <p class="info">현재 위치에서 가까운 순으로 나열하였습니다.</p>
-            <br />
+            <br/>
             <div class="card-deck">
                 <div class="card card1">
                     <img src="" class="card-img-top img1" alt="...">

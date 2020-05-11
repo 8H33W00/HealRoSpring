@@ -3,11 +3,12 @@
 }
 
 #explain1 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     background-color: white;
     border-radius: 10px;
     margin-left: 40px;
     padding: 20px;
+    font-family: 'Jua', sans-serif;
 }
 
 .graph {
@@ -35,6 +36,11 @@
 .tabs {
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Jua', sans-serif;
+}
+
+.tab {
+	font-size: 1.1em;
 }
 
 .tabs label {
