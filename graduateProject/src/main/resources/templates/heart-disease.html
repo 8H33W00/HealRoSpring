@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/disease.css">
+    <link rel="stylesheet" href="./css/heart-disease.css">
 </head>
 <body>
 <div class="container">
@@ -18,28 +19,24 @@
     <hr class="my-4">
 
     <div>
-        <div class="row">
-        	<div class="ml-4"><img src="./img/heart-disease.jpg" style="width: auto; height: 200px; display: inline; border-radius: 10px;" alt=""></div>
-        </div>
-        <div class="lead mt-3" id ="subject">심장 근육은 산소가 풍부한 혈액의 꾸준한 공급이 필요합니다.    <br/>
-        심장에서 나온 대동맥에서 갈라져 나온 관상동맥이 이러한 혈액을 전달합니다.    <br/>
-        이 동맥 한 개 이상을 좁히는 관상동맥병은 혈류를 차단하여 흉통(협심증) 또는 심장마비(심근경색증 또는 MI라고도 합니다)를 유발할 수 있습니다.
+		<!-- <img src="./img/heart-disease.jpg" style="width: auto; height: 200px; display: inline; border-radius: 10px;" alt=""></div> -->
+        	<iframe id="youtube" width="400" height="200" src="https://www.youtube.com/embed/flJsXOMhuK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <p id="content">심장은 근육질로 되어 있습니다. 따라서 심장이 정상적으로 작동을 하려면 끊임없는 산소의 공급과 영양소가 풍부한 혈액의 공급이 절대적입니다. 세 갈래의 관상동맥과 심장 표면을 덮고 있는 혈관망은 혈액을 공급하는 역할을 합니다. 이들 관상동맥이 동맥경화가 심해져서 부분적으로 좁아지거나 막힐 경우, 심장은 산소를 함유한 혈액을 충분히 공급받지 못하게 됩니다. 더구나 신체적 또는 심리적 스트레스로 더 많은 산소와 영양소를 필요로 할 때 심장 근육은 제대로 역할을 하지 못하게 됩니다. 바로 이럴 때에 협심증을 일으키거나 가슴에 통증을 느끼게 되는 것입니다. 이런 증세를 즉시 치료하지 않으면 심근경색증 또는 돌연사(심장마비)까지도 일으킬 우려가 있습니다.
             <br/>
-            <br/>
-         	   한때는 관상동맥병을 남자의 질병이라고들 생각했었습니다. <br/>
-         	   여성은 폐경 때까지 높은 수치의 에스트로겐으로 보호되기 때문에 평균적으로 남성이 여성보다 약 10년 일찍 관상동맥병에 걸립니다. 
-         	   폐경 후에는 여성에게 더 많이 발생합니다. <br/>
-         	   여성이 더 오래 살기 때문에 75세 이상 인구 중 더 높은 비율의 여성이 이 병을 앓습니다.<br/>
-        </div>
+         	   한때는 관상동맥병을 남자의 질병이라고들 생각했었습니다. 여성은 폐경 때까지 높은 수치의 에스트로겐으로 보호되기 때문에 평균적으로 남성이 여성보다 약 10년 일찍 관상동맥병에 걸립니다. 
+         	   폐경 후에는 여성에게 더 많이 발생합니다. 여성이 더 오래 살기 때문에 75세 이상 인구 중 더 높은 비율의 여성이 이 병을 앓습니다. 따라서 관상동맥질환은 어떤 성별이든 예방하는 것이 중요합니다.<br/></p>
+        
+         
     </div>
     <hr class="my-4">
-    <div class="row ml-4 mb-3" id ="predNm" style="text-align: center; margin: 0 auto;">
-    	<div class="col-3"></div>
-        <div class="col-5" style="text-align: center; border: 1px solid black; padding: 30px 0;">
+    <div id ="predNm" style="text-align: center; margin: 0 auto; width: 500px; padding-bottom: 30px;">
+        <div style="text-align: center; border: 1px solid black; padding: 30px 0;">
             <h3>관상 동맥 심장병 발생 확률 예측</h3>
             <button style="margin-top: 30px;" class="btn btn-primary btn-lg" onclick="heartDiseasePredict()">Predict</button>
         </div>
     </div>
+
     <div id="E_WRAP">
         <div id="FAQ" class="E_FAQ" style="background-color:white;">
             <div class="E_QList">

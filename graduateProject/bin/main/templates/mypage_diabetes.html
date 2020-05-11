@@ -28,7 +28,7 @@
         <ul class="MyPage__header-list">
           <li class="MyPage__header-btn header-btn">
             <span class="header-btn__icon">
-                <a href="mypage_heart.html" class="MyPage__header-link">
+                <a href="/mypage_heart" class="MyPage__header-link">
                     <i class="far fa-heart fa-2x"></i>
                 </a>
             </span>
@@ -38,7 +38,7 @@
           </li>
           <li class="MyPage__header-btn header-btn">
             <span class="header-btn__icon">
-                <a href="mypage_diabetes.html" class="MyPage__header-link">
+                <a href="/mypage_diabetes" class="MyPage__header-link">
                     <i class="fas fa-user fa-2x"></i>
               </a>
             </span>
@@ -48,7 +48,7 @@
           </li>
           <li class="MyPage__header-btn header-btn">
             <span class="header-btn__icon">
-                <a href="mypage_breast.html" class="MyPage__header-link">
+                <a href="/mypage_breast" class="MyPage__header-link">
                     <i class="far fa-lightbulb fa-2x"></i>
               </a>
             </span>
@@ -59,7 +59,7 @@
          
           <li class="MyPage__header-btn header-btn">
             <span class="header-btn__icon">
-                <a href="mypage_vascular.html" class="MyPage__header-link">
+                <a href="/hospital_https" class="MyPage__header-link">
                     <i class="far fa-hospital fa-2x"></i>
               </a>
             </span>
@@ -73,7 +73,7 @@
 	<div class="chart">
       <br><br><br><br>
       	<span class="predic">predict percentage:
-      		<button type="button" class="btn btn-outline-primary text-bold" id="visual" th:text="${session.diabete}" role="button"></button>
+      		<button type="button" class="btn btn-outline-primary text-bold" id="visual" th:text="${session.diabetes}" role="button"></button>
 		</span>
 			<div class="container">
 				<span><canvas id="myChart" width="500" height="400" ></canvas></span>
