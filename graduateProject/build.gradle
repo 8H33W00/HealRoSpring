@@ -28,6 +28,8 @@ dependencies {
 	implementation group: 'org.mindrot', name: 'jbcrypt', version: '0.3m'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	compile 'org.springframework.boot:spring-boot-starter-mail'
+	compile fileTree(dir: 'libs', include: '*.jar')
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
