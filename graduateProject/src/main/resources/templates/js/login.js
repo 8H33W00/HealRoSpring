@@ -1,3 +1,5 @@
+var targetId;
+
 function signUp()
 {
 	$('#validselUserId1').hide();
@@ -11,13 +13,15 @@ function signUp()
 	$('#validselUserNm2').hide();
 	$('#validselUserNm3').hide();
 	$('#validselUserFind').hide();
-	
+	$('#validselUserEmail1').hide();
+	$('#validselUserEmail2').hide();
 	
 	var userId = $('#selUserId').val();
 	var userPwd = $('#selUserPwd').val();
 	var userPwd2 = $('#selUserPwd2').val();
 	var userName = $('#selUserNm').val();
 	var userFind = $('#selUserFind').val();
+	var userEmail = $('#selUserEmail').val();
 	
 	var isValid = true;
 	
@@ -88,6 +92,11 @@ function signUp()
 		}
 	
 	}
+	if(userEmail == "" || !emailCheck(userEmail))
+	{
+		isValid = false;
+		$('#validselUserEmail2').show();
+	}
 	
 	if(isValid)
 	{
@@ -96,7 +105,8 @@ function signUp()
 			userId : userId,
 			userPwd : userPwd,
 			userName : userName,
-			userFind : userFind
+			userFind : userFind,
+			userEmail : userEmail
 	};
 	
 	console.log(data);
@@ -190,17 +200,94 @@ function findPwd()
 	    },
     	success: function(response) {
     		console.log(response);
-    		if(response == "Password Query is not correct")
+    		if(response == 1)
     		{
-    			alert(response)
+    			alert("Password Query is not correct")
     			}
-    		else if(response == "There is no such ID")
+    		else if(response == 2)
     		{
-    			alert(response)
+    			alert("There is no such ID")
     			}
     		else{
-    			alert("Your Password : " + response);
+    			alert("Enter the new Password");
+    			targetId = userId
+    			$('#findUserModal').modal('hide');
+    			$('#changePwdModal').modal('show');
     		}
+        },
+        failure: function( response ) {
+     	   alert('fail');
+        }
+	});
+	}
+}
+
+function changePwd()
+{
+	$('#validselNewPwd1').hide();
+	$('#validselNewPwd2').hide();
+	$('#validselNewPwd3').hide();
+	$('#validselNewPwd4').hide();
+	
+	var newPwd = $('#newPwd').val();
+	var newPwd2 = $('#newPwd2').val();
+	
+	var isValid = true;
+	
+	if(newPwd =="" || !passwordCheck(newPwd))
+	{
+		isValid = false;
+		
+		if(newPwd == "")
+		{
+			$('#validselNewPwd1').show();
+		}
+		
+		else if(!passwordCheck(newPwd))
+		{
+			$('#validselNewPwd2').show();
+		}	
+
+	}
+	
+	if(newPwd2 =="" || newPwd != newPwd2 )
+	{
+		isValid = false;
+		
+		if(newPwd2 == "")
+		{
+			$('#validselNewPwd4').show();
+		}
+		
+		else 
+		{
+			$('#validselNewPwd3').show();
+		}	
+
+	}
+	
+	if(isValid)
+	{
+		
+	var data ={
+			userId : targetId,
+			userPwd : newPwd
+	};
+	
+	console.log(data);
+	
+	$.ajax({
+        url: 'changePwd',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+	    xhrFields: {
+	        withCredentials: true
+	    },
+    	success: function(response) {
+    		console.log(response);
+    		alert('Password has been changed successfully.');
+    		$('#changePwdModal').modal('hide');
         },
         failure: function( response ) {
      	   alert('fail');
@@ -299,10 +386,13 @@ function findCheck(x)
         return reg.test(x);
 }
 
+function emailCheck(email) {
+    var reg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return reg.test(email);
+}
+
 function clickEnter(){
 	if(window.event.keyCode == 13){
 		signIn();
 	}
 }
-
-

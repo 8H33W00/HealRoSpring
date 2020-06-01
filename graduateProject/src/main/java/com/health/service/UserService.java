@@ -2,11 +2,14 @@ package com.health.service;
 
 import javax.servlet.http.HttpSession;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.health.entity.User;
 import com.health.repository.UserRepository;
+
+
 
 @Service
 public class UserService {
@@ -16,10 +19,20 @@ public class UserService {
 	@Autowired
 	ResultService resultService;
 	
+	public String hashing(String plainText) {
+		return BCrypt.hashpw(plainText,BCrypt.gensalt());
+	}
+	
+	public boolean checkHashCode(String plainText, String hashCode) {
+		return BCrypt.checkpw(plainText, hashCode);
+	}
+	
 	public boolean create(User user)
 	{
 		System.out.println("+++++++++++++++"+user);
 		try {
+			user.setUserPwd(hashing(user.getUserPwd()));
+			user.setUserFind(hashing(user.getUserFind()));
 			userRepo.save(user);
 			resultService.create(user.getUserName());
 			return true;
@@ -65,7 +78,7 @@ public class UserService {
 		{
 			User checkUser = userRepo.findByUserId2(user.getUserId());
 			System.out.println("----------------"+checkUser);
-			if(user.getUserPwd().equals(checkUser.getUserPwd()))
+			if(checkHashCode(user.getUserPwd(),checkUser.getUserPwd()))
 			{
 				return 1;
 			}
@@ -77,23 +90,27 @@ public class UserService {
 		}
 	}
 	
-	public String findPwd(User user)
+	public int findPwd(User user)
 	{
 		System.out.println("----------------"+user);
 		if(userRepo.findByUserId2(user.getUserId()) != null)
 		{
 			User checkUser = userRepo.findByUserId2(user.getUserId());
 			System.out.println("----------------"+checkUser);
-			if(user.getUserFind().equals(checkUser.getUserFind()))
+			if(checkHashCode(user.getUserFind(),checkUser.getUserFind()))
 			{
-				return checkUser.getUserPwd();
+				return 0;
 			}
-			return "Password Query is not correct";
+			return 1;
 		}
 		else
 		{
-			return "There is no such ID";
+			return 2;
 		}
+	}
+	
+	public void changePwd(User user) {
+		userRepo.changePwd(user.getUserId(), hashing(user.getUserPwd()));
 	}
 	
 }

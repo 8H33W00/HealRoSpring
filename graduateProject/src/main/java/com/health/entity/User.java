@@ -17,6 +17,7 @@ public class User {
 	String userPwd;
 	String userName;
 	String userFind;
+	String userEmail;
 	
 }
 

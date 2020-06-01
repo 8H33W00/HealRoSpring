@@ -108,6 +108,16 @@
 						이미 존재하는 Nickname 입니다.
 				 </div>
                 </div>
+                <div class="form-group">
+                  <label for="selUserEmail">E-Mail</label>
+                  <input type="email" class="form-control" id="selUserEmail" name="userEmail" placeholder="Input Your E-Mail" required>
+                  <div class="invalid-feedback col-10" id ="validselUserEmail1">
+						E-Mail 을 입력해주세요.
+				 </div>
+				 <div class="invalid-feedback col-15" id ="validselUserEmail2">
+						옳바른 E-Mail 형식이 아닙니다.  
+				 </div>
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id ="modalClose">Close</button>
@@ -151,6 +161,47 @@
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id ="modalClose">Close</button>
                 <button onclick ='findPwd()' class="btn btn-primary">Find</button>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="modal fade" id="changePwdModal" tabindex="-1" role="dialog" aria-labelledby="selectCmpnyModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Enter the new Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+              <div class="modal-body">
+                
+                <div class="form-group">
+                  <label for="newPwd">Password</label>
+                  <input type="password" class="form-control" id="newPwd" name="userPwd" placeholder="Input Your New Password" required>
+                  <div class="invalid-feedback col-5" id ="validselNewPwd1">
+						Password 를 입력해주세요.
+				 </div>
+				 <div class="invalid-feedback col-15" id ="validselNewPwd2">
+						Password 는 공백을 제외하고 6 ~ 14 자 이내여야 합니다.
+				 </div>
+                </div>
+                <div class="form-group">
+                  <label for="newPwd">Password Check</label>
+                  <input type="password" class="form-control" id="newPwd2" name="userPwd2" placeholder="Input Your New Password Again" required>
+                  <div class="invalid-feedback col-15" id ="validselNewPwd3">
+						Password 에 기입한 내용과 일치하지 않습니다.
+				 </div>
+				 <div class="invalid-feedback col-10" id ="validselNewPwd4">
+						Password 를 다시 한 번 입력해주세요.
+				 </div>
+                </div>
+               
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-third" data-dismiss="modal" id ="modalClose">Close</button>
+                <button onclick ='changePwd()' class="btn btn-third">Change</button>
               </div>
           </div>
         </div>
