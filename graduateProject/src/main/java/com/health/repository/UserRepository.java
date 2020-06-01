@@ -29,4 +29,11 @@ public interface UserRepository extends JpaRepository<User,String> {
 			nativeQuery = true)
 	User findByUserName(@Param("userName")String userName);
 	
+	@Transactional
+	@Modifying
+	@Query(value = "UPDATE user A"
+			+" SET A.USER_PWD = (:newPwd)"
+			+" WHERE A.USER_ID = (:userId)",nativeQuery = true)
+	void changePwd(@Param("userId")String userId, @Param("newPwd")String newPwd);
+	
 }

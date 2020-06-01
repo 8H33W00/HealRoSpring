@@ -89,11 +89,15 @@ public class UserRestController {
 	
 	
 	@PostMapping("/findPwd")
-	public String findPwd(@RequestBody User user)
+	public int findPwd(@RequestBody User user)
 	{
-		String msg = userService.findPwd(user);
-		return msg;
+		return userService.findPwd(user);
 		
+	}
+	
+	@PostMapping("/changePwd")
+	public void changePwd(@RequestBody User user) {
+		userService.changePwd(user);
 	}
 	
 }
