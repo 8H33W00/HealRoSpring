@@ -1,6 +1,7 @@
 package com.health.run;
 
 import org.apache.catalina.connector.Connector;
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 import org.springframework.boot.SpringApplication;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -25,6 +26,7 @@ public class GraduateProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GraduateProjectApplication.class, args);
+		
 	}
 	
 	@Bean
