@@ -30,6 +30,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	compile 'org.springframework.boot:spring-boot-starter-mail'
 	compile fileTree(dir: 'libs', include: '*.jar')
+	compile "com.github.ulisesbocchio:jasypt-spring-boot-starter:1.17"
+	
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
