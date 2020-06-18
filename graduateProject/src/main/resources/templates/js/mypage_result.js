@@ -1,4 +1,3 @@
-	
 	$('#notyet').hide();
 	$('#primary').hide();
 	$('#secondary').hide();
@@ -12,7 +11,7 @@
 	if(recentResult > 50){
 		$('#secondary').show();
 	}
-	else if(recentResult <= 50 && recentResult >= 0){
+	else if(recentResult <= 50 && recentResult > 0){
 		$('#primary').show();
 	}
 	else{

@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 const hos1 = document.querySelector(".card1"),
     hos1_name = hos1.querySelector(".card-title1"),
     hos1_addr = hos1.querySelector(".card-addr1"),
