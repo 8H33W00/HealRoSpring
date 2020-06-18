@@ -48,10 +48,10 @@ public class MailRestController {
 		MimeMessage msg = jmsender.createMimeMessage();
 		try {
 	    msg.setFrom("HealRo@noreply"); 
-	    msg.addRecipient(RecipientType.TO, new InternetAddress(user.getUserEmail(), user.getUserName() +"´Ô", "8859_1"));
+	    msg.addRecipient(RecipientType.TO, new InternetAddress(user.getUserEmail(), user.getUserName() +"´Ô", "euc-kr"));
 
-	    msg.setSubject("HealRo¿¡¼­ º¸³À´Ï´Ù.","8859_1"); 
-	    msg.setText(m,"8859_1"); 
+	    msg.setSubject("HealRo¿¡¼­ º¸³À´Ï´Ù.","euc-kr"); 
+	    msg.setText(m,"euc-kr"); 
 	    jmsender.send(msg); 
 		}
 		catch (MessagingException e) {
