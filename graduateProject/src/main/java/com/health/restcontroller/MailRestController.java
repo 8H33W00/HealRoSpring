@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.health.entity.User;
 import com.health.repository.UserRepository;
+import com.health.service.MailService;
 import com.health.service.UserService;
 
 
@@ -23,19 +24,21 @@ public class MailRestController {
 
 	@Autowired 
 	private MailSender sender;
+	@Autowired
+	MailService mailService;
 
 	@GetMapping("/mail")
 	public String sendMail( HttpSession session, HttpServletResponse response) 
 	{ 
 		String nickname = (String) session.getAttribute("userNickName");
 		User user = userRepo.findByUserName(nickname); 
-				
+		String m = mailService.coronaryContent(user) +"\n" + mailService.diabeteContent(user) +"\n" + mailService.cadioContent(user);
 				
 		SimpleMailMessage msg = new SimpleMailMessage(); 
 	    msg.setFrom("HealRo@noreply"); 
 	    msg.setTo(user.getUserEmail()); 
 	    msg.setSubject("HealRo에서 보냅니다."); 
-	    msg.setText("당뇨병으로 당신은 아프네요"); 
+	    msg.setText(m); 
 	    this.sender.send(msg); 
 	    return "";
 	    
