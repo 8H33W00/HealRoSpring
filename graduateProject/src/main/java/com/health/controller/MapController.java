@@ -2,6 +2,7 @@ package com.health.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,20 @@ public class MapController {
 	HospitalRepository hosRepo;
 	
 	@GetMapping("/https")
-	public ModelAndView https(){
+	public ModelAndView https(HttpServletRequest request){
 		
-		
+		boolean secure= request.isSecure();
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("check", 1);
-		mv.setViewName("https");
+		if(!secure)
+		{
+			mv.addObject("check", 1);
+			mv.setViewName("https");
+		}
+		else
+		{
+			mv.setViewName("redirect:/map");
+		}
+		
 		
 		return mv;
 	}
