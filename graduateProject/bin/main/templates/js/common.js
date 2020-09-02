@@ -57,6 +57,16 @@ function diabetesPredict()
 	}
 }
 
+// function toggleLang() {
+// 	let element = document.getElementById('translation');
+// 	console.log(element.value)
+// 	if (element.value === 'KOR') {
+// 		element.value = 'ENG'
+// 	} else if (element.value === 'ENG') {
+// 		element.value = 'KOR';
+// 	}
+// }
+
 function mail()
 {
 	

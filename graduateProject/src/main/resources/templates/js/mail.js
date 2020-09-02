@@ -10,6 +10,7 @@ function mail()
         processData : false,
     	success: function(response) {
     		alert("메일이 발송되었습니다");
+    		$('#modalClose').click();
         },
         failure: function( response ) {
      	   alert('fail');
@@ -17,6 +18,4 @@ function mail()
 	});
 	
 	
-}/**
- * 
- */
+}
