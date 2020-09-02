@@ -42,15 +42,18 @@ public class MailRestController {
 	{ 
 		String nickname = (String) session.getAttribute("userNickName");
 		User user = userRepo.findByUserName(nickname); 
-		String m = mailService.coronaryContent(user) +"\n" + mailService.diabeteContent(user) +"\n" + mailService.cadioContent(user);
+		String m = mailService.greetingMessage(user)+ "\n\n"
+				+ mailService.coronaryContent(user) +"\n"
+				+ mailService.diabeteContent(user) + "\n"
+				+ mailService.cadioContent(user);
 				
 		
 		MimeMessage msg = jmsender.createMimeMessage();
 		try {
 	    msg.setFrom("HealRo@noreply"); 
-	    msg.addRecipient(RecipientType.TO, new InternetAddress(user.getUserEmail(), user.getUserName() +"´Ô", "euc-kr"));
+	    msg.addRecipient(RecipientType.TO, new InternetAddress(user.getUserEmail(), user.getUserName(), "euc-kr"));
 
-	    msg.setSubject("HealRo¿¡¼­ º¸³À´Ï´Ù.","euc-kr"); 
+	    msg.setSubject("HealRo service report.","euc-kr"); 
 	    msg.setText(m,"euc-kr"); 
 	    jmsender.send(msg); 
 		}
