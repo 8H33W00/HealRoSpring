@@ -78,19 +78,49 @@ main {
 }
 
 .MYPAGE #picture {
-    display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
 }
 
+
+
 .chart {
-       width: 60%;
+	 	/*width: 60%;*/
+        padding: 20px;
+
+        /*float: left;*/
+        
+       /* width: 60%;
        height: 100%;
-       float: left;
+       float: left; */
 }
 .visual {
-       width: 40vw;
-       height: 100%;
+		/*width: 40%;*/
+        padding: 20px;
+
+
+        
+       /* width: 40vw;
+       height: 100%; /
        /*float: left;*/
 }
+
+@media ( max-width: 480px ) {
+        .MYPAGE #picture {
+            display: block;
+        }
+        .chart {
+          /*float: none;*/
+          width: auto;
+        }
+        .visual {
+          min-height: 0;
+          /*float: right;*/
+          width: auto;
+        }
+      }
+
+
 .ment {
        width: 100%;
        height: 40%;
