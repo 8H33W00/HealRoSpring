@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predict Heart Disease</title>
@@ -11,7 +12,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="./css/login.css">
     <link rel="stylesheet" type="text/css" href="./css/mypage.css">
-    <title>heart reports</title>
+   
 </head>
 
 <body>
@@ -49,54 +50,64 @@
             </span>
                     </li>
                     <li class="MyPage__header-btn header-btn">
-            <span class="header-btn__icon">
-                <a href="/mypage_breast" class="MyPage__header-link">
-                    <i class="far fa-lightbulb fa-2x"></i>
-              </a>
-            </span>
-                        <span class="header-btn__title">
-              Cardio Vascular
-            </span>
-                    </li>
+            <der-btn__icon">       
+				<div id="picture">
+					<div class="chart">
+						<br>
+						<br>
+						<br>
+						<br> <span class="predic">predict percentage:
+							<button type="button" class="btn btn-outline-primary text-bold"
+								id="visual" th:text="${session.coronary}" role="button"></button>
+						</span>
+						<div class="container">
+							<span><canvas id="myChart" width="500" height="400"></canvas></span>
+						</div>
+					</div>
+					<div class="visual">
+						<br>
+						<br>
+						<br>
+						<br>
+						<div id="ment1">
+							이전의 검사결과와 비교하여 30% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에
+							유의하십시오.<br>
+							<br>
+						</div>
+						<div id="ment2">
+							이전의 검사결과와 비교하여 10% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에
+							유의하십시오.<br>
+							<br>
+						</div>
+						<div id="ment3">
+							이전의 검사결과와 비교하여 비슷한 수준입니다.<br>하단의 예방책들을 확인하여 건강 관리를 시작해보세요.<br>
+							<br>
+						</div>
+						<div id="ment4">
+							이전의 검사결과와 비교하여 10% 이상 좋아졌습니다.<br>좋은 현상입니다. 더욱 더 신경써 다음 단계를
+							성취해보세요.<br>
+							<br>
+						</div>
+						<div id="ment5">
+							이전의 검사결과와 비교하여 30% 이상 좋아졌습니다.<br>건강관리에 있어 최고 수준입니다. 커뮤니티를 통해
+							방법을 공유하여 비법을 전수해봅시다.<br>
+							<br>
+						</div>
+						<div id="ment6">
+							비교할 검사결과들이 없습니다.<br>질병 예측 서비스를 이용하고 자신의 건강 상태를 꾸준히 관리해보세요.<br>
+							<br>
+						</div>
+						<div class="image">
+							<img id=stage width="300" height="300"><br>
+							<br>
+							<br>Icon made by Freepik from www.flaticon.com<br>
+							<br>
+							<br>
+						</div>
+					</div>
+				</div>
 
-                    <li class="MyPage__header-btn header-btn">
-            <span class="header-btn__icon">
-                <a href="/hospital_https" class="MyPage__header-link">
-                    <i class="far fa-hospital fa-2x"></i>
-              </a>
-            </span>
-                        <span class="header-btn__title">
-              Hospital
-            </span>
-                    </li>
-                </ul>
-            </header>
-            <div id="picture">
-                <div class="chart">
-                    <br><br><br><br>
-                    <span class="predic">predict percentage:
-      		<button type="button" class="btn btn-outline-primary text-bold" id="visual" th:text="${session.coronary}"
-                    role="button"></button>
-		</span>
-                    <div class="container">
-                        <span><canvas id="myChart" width="500" height="400"></canvas></span>
-                    </div>
-                </div>
-                <div class="visual">
-                    <br><br><br><br>
-                    <div id="ment1">이전의 검사결과와 비교하여 30% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에 유의하십시오.<br><br></div>
-                    <div id="ment2">이전의 검사결과와 비교하여 10% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에 유의하십시오.<br><br></div>
-                    <div id="ment3">이전의 검사결과와 비교하여 비슷한 수준입니다.<br>하단의 예방책들을 확인하여 건강 관리를 시작해보세요.<br><br></div>
-                    <div id="ment4">이전의 검사결과와 비교하여 10% 이상 좋아졌습니다.<br>좋은 현상입니다. 더욱 더 신경써 다음 단계를 성취해보세요.<br><br></div>
-                    <div id="ment5">이전의 검사결과와 비교하여 30% 이상 좋아졌습니다.<br>건강관리에 있어 최고 수준입니다. 커뮤니티를 통해 방법을 공유하여 비법을
-                        전수해봅시다.<br><br></div>
-                    <div id="ment6">비교할 검사결과들이 없습니다.<br>질병 예측 서비스를 이용하고 자신의 건강 상태를 꾸준히 관리해보세요.<br><br></div>
-                    <div class="image"><img id=stage width="300" height="300"><br><br><br>Icon made by Freepik from
-                        www.flaticon.com<br><br><br></div>
-                </div>
-            </div>
-
-            <div>
+				<div>
                 <span class="prevent">disease prevention: </span>
             </div>
 
@@ -138,7 +149,17 @@
 
                 4. 운동 및 체중조절<br>
                 육제적활동의 목표는 매일 (최소한 5일/주) 30분간 운동이다. 연구결과에 의하면 전혀 운동하지 않는 것보다 조금이라도 하는 것이 좋으며, 활동량이 증가할수록 추가이득이 발생한다고 한다.
-                체중관리의 목표는 BMI 18.5-24.9kg/m2 이고 허리둘레는 남자 <101.6cm (40인치), 여자<88.9cm (35인치)이다.<br><br>
+                체중관리의 목표는 BMI 18.5-24.9kg/m2 이고 허리둘레는 남자 <101.6cm (40인치), 여자<.9js@2.8.0"></script>
+<script src="./js/common.js"></script>
+<script th:inline="javascript">
+    var recentResult = /*[[${session.coronary}]]*/ "";
+    var pastResult = /*[[${session.coronaryPast}]]*/ "";
+    var recentDate = /*[[${session.coronaryDate}]]*/ "";
+    var pastDate = /*[[${session.coronaryPastDate}]]*/ "";
+</script>
+<script th:inline="javascript" src="./js/mypage_result.js"></script>
+</body>
+</html>cm (35인치)이다.<br><br>
 
                 5. 당뇨관리<br>
                 당뇨관리의 목표치는 당화혈색소(HbA1c) 수치 < 7% 이다.식생활습관개선과 약물치료로 정상에 근접한 HbA1c 수치를 달성한다.I (B) ▲다른 위험인자 들 (즉,
@@ -156,14 +177,26 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<script src="./js/common.js"></script>
-<script th:inline="javascript">
-    var recentResult = /*[[${session.coronary}]]*/ "";
-    var pastResult = /*[[${session.coronaryPast}]]*/ "";
-    var recentDate = /*[[${session.coronaryDate}]]*/ "";
-    var pastDate = /*[[${session.coronaryPastDate}]]*/ "";
-</script>
-<script th:inline="javascript" src="./js/mypage_result.js"></script>
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.88
+                <a href="/mypage_breast" class="MyPage__header-link">
+                    <i class="far fa-lightbulb fa-2x"></i>
+              </a>
+            </span>
+                        <span class="header-btn__title">
+              Cardio Vascular
+            </span>
+                    </li>
+
+                    <li class="MyPage__header-btn header-btn">
+            <span class="header-btn__icon">
+                <a href="/hospital_https" class="MyPage__header-link">
+                    <i class="far fa-hospital fa-2x"></i>
+              </a>
+            </span>
+                        <span class="header-btn__title">
+              Hospital
+            </span>
+                    </li>
+                </ul>
+            </header>
+     span class="hea
