@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Predict Heart Disease</title>
@@ -11,7 +12,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="./css/login.css">
     <link rel="stylesheet" type="text/css" href="./css/mypage.css">
-    <title>heart reports</title>
+   
 </head>
 
 <body>
@@ -71,36 +72,65 @@
                     </li>
                 </ul>
             </header>
-            <div id="picture">
-                <div class="chart">
-                    <br><br><br><br>
-                    <span class="predic">predict percentage:
-      		<button type="button" class="btn btn-outline-primary text-bold" id="visual" th:text="${session.coronary}"
-                    role="button"></button>
-		</span>
-                    <div class="container">
-                        <span><canvas id="myChart" width="500" height="400"></canvas></span>
-                    </div>
-                </div>
-                <div class="visual">
-                    <br><br><br><br>
-                    <div id="ment1">이전의 검사결과와 비교하여 30% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에 유의하십시오.<br><br></div>
-                    <div id="ment2">이전의 검사결과와 비교하여 10% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에 유의하십시오.<br><br></div>
-                    <div id="ment3">이전의 검사결과와 비교하여 비슷한 수준입니다.<br>하단의 예방책들을 확인하여 건강 관리를 시작해보세요.<br><br></div>
-                    <div id="ment4">이전의 검사결과와 비교하여 10% 이상 좋아졌습니다.<br>좋은 현상입니다. 더욱 더 신경써 다음 단계를 성취해보세요.<br><br></div>
-                    <div id="ment5">이전의 검사결과와 비교하여 30% 이상 좋아졌습니다.<br>건강관리에 있어 최고 수준입니다. 커뮤니티를 통해 방법을 공유하여 비법을
-                        전수해봅시다.<br><br></div>
-                    <div id="ment6">비교할 검사결과들이 없습니다.<br>질병 예측 서비스를 이용하고 자신의 건강 상태를 꾸준히 관리해보세요.<br><br></div>
-                    <div class="image"><img id=stage width="300" height="300"><br><br><br>Icon made by Freepik from
-                        www.flaticon.com<br><br><br></div>
-                </div>
-            </div>
+            
+				<div id="picture">
+					<div class="chart">
+						<br>
+						<br>
+						<br>
+						<br> <span class="predic">predict percentage:
+							<button type="button" class="btn btn-outline-primary text-bold"
+								id="visual" th:text="${session.coronary}" role="button"></button>
+						</span>
+						<div class="container">
+							<span><canvas id="myChart" width="500" height="400"></canvas></span>
+						</div>
+					</div>
+					<div class="visual ml-4"  id ="visual">
+						<br>
+						<br>
+						<br>
+						<br>
+						<div id="ment1">
+							이전의 검사결과와 비교하여 30% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에
+							유의하십시오.<br>
+							<br>
+						</div>
+						<div id="ment2">
+							이전의 검사결과와 비교하여 10% 이상 악화되었습니다.<br>하단의 예방책들을 확인하여 건강 관리에
+							유의하십시오.<br>
+							<br>
+						</div>
+						<div id="ment3">
+							이전의 검사결과와 비교하여 비슷한 수준입니다.<br>하단의 예방책들을 확인하여 건강 관리를 시작해보세요.<br>
+							<br>
+						</div>
+						<div id="ment4">
+							이전의 검사결과와 비교하여 10% 이상 좋아졌습니다.<br>좋은 현상입니다. 더욱 더 신경써 다음 단계를
+							성취해보세요.<br>
+							<br>
+						</div>
+						<div id="ment5">
+							이전의 검사결과와 비교하여 30% 이상 좋아졌습니다.<br>건강관리에 있어 최고 수준입니다. 커뮤니티를 통해
+							방법을 공유하여 비법을 전수해봅시다.<br>
+							<br>
+						</div>
+						<div id="ment6">
+							비교할 검사결과들이 없습니다.<br>질병 예측 서비스를 이용하고 자신의 건강 상태를 꾸준히 관리해보세요.<br>
+							<br>
+						</div>
+						<div class="image  pl-5">
+							<img id=stage width="300" height="300"><br>
+							
+						</div>
+					</div>
+				</div>
 
-            <div>
+				<div>
                 <span class="prevent">disease prevention: </span>
             </div>
 
-            <div id="notyet">
+            <div id="notyet" class="ml-4">
                 진행된 검사가 없습니다. 질병 예측 서비스를 이용해 검사를 실시해보세요.
             </div>
 
@@ -159,10 +189,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <script src="./js/common.js"></script>
 <script th:inline="javascript">
-    var recentResult = /*[[${session.coronary}]]*/ "";
-    var pastResult = /*[[${session.coronaryPast}]]*/ "";
-    var recentDate = /*[[${session.coronaryDate}]]*/ "";
-    var pastDate = /*[[${session.coronaryPastDate}]]*/ "";
+    var recentResult = [[${session.coronary}]];
+    var pastResult = [[${session.coronaryPast}]];
+    var recentDate = [[${session.coronaryDate}]];
+    var pastDate = [[${session.coronaryPastDate}]];
 </script>
 <script th:inline="javascript" src="./js/mypage_result.js"></script>
 </body>

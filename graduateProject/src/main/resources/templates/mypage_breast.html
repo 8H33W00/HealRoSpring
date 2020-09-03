@@ -72,7 +72,7 @@
 							<span><canvas id="myChart" width="500" height="400"></canvas></span>
 						</div>
 					</div>
-					<div class="visual">
+					<div class="visual ml-4"  id ="visual">
 						<br>
 						<br>
 						<br>
@@ -105,12 +105,9 @@
 							비교할 검사결과들이 없습니다.<br>질병 예측 서비스를 이용하고 자신의 건강 상태를 꾸준히 관리해보세요.<br>
 							<br>
 						</div>
-						<div class="image">
+						<div class="image pl-5">
 							<img id=stage width="300" height="300"><br>
-							<br>
-							<br>Icon made by Freepik from www.flaticon.com<br>
-							<br>
-							<br>
+							
 						</div>
 					</div>
 				</div>
@@ -120,7 +117,7 @@
 				</div>
 
 
-				<div id="notyet">진행된 검사가 없습니다. 질병 예측 서비스를 이용해 검사를 실시해보세요.</div>
+				<div id="notyet" class="ml-4">진행된 검사가 없습니다. 질병 예측 서비스를 이용해 검사를 실시해보세요.</div>
 				<div id="primary">
 					심혈관 지방을 1차적으로 예방하는 가장 중요한 방법은 평생 건강한 생활습관을 증진시키는 것이다.<br>
 					<br> 1. 음식<br> 모든 성인들은 야채, 과일, 견과류, 통곡물, 기름기 없는 야채의 섭취를
@@ -173,11 +170,11 @@
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 	<script src="./js/common.js"></script>
 	<script th:inline="javascript">
-		var recentResult = /*[[${session.cardio}]]*/"";
-		var pastResult = /*[[${session.cardioPast}]]*/"";
-		var recentDate = /*[[${session.cardioDate}]]*/"";
-		var pastDate = /*[[${session.cardioPastDate}]]*/"";
+		var recentResult = [[${session.cardio}]];
+		var pastResult = [[${session.cardioPast}]];
+		var recentDate = [[${session.cardioDate}]];
+		var pastDate = [[${session.cardioPastDate}]];
 	</script>
 	<script th:inline="javascript" src="./js/mypage_result.js"></script>
 </body>
-</html>=
+</html>

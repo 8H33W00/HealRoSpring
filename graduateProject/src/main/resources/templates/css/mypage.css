@@ -1,7 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Kirang+Haerang&family=Noto+Serif+KR:wght@200;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Poor+Story&display=swap');
+
 * {
   box-sizing: border-box;
+  
+
 }
 
+.MYPAGE{
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#visual{
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#notyet{
+	font-family: 'Do Hyeon', sans-serif;
+}
+
+#primary{
+	font-family: 'Poor Story', cursive;
+}
+
+#secondary{
+	font-family: 'Poor Story', cursive;
+	font-size : 20px;
+}
+
+.prevent{
+	font-family: 'Do Hyeon', sans-serif;
+	font-size : 30px;
+}
 
 body {
   background-color: white;

@@ -38,11 +38,28 @@
 								class="MyPage__header-link"> <i class="far fa-heart fa-2x"></i>
 							</a>
 						</span> <span class="header-btn__title"> Coronary Artery </span></li>
-						<-btn"><spanspital </span></li>
+						<li class="MyPage__header-btn header-btn"><span
+							class="header-btn__icon"> <a href="/mypage_diabetes"
+								class="MyPage__header-link"> <i class="fas fa-user fa-2x"></i>
+							</a>
+						</span> <span class="header-btn__title"> Diabetes </span></li>
+						<li class="MyPage__header-btn header-btn"><span
+							class="header-btn__icon"> <a href="/mypage_breast"
+								class="MyPage__header-link"> <i
+									class="far fa-lightbulb fa-2x"></i>
+							</a>
+						</span> <span class="header-btn__title"> Cardio Vascular </span></li>
+
+						<li class="MyPage__header-btn header-btn"><span
+							class="header-btn__icon"> <a href="/hospital_https"
+								class="MyPage__header-link"> <i
+									class="far fa-hospital fa-2x"></i>
+							</a>
+						</span> <span class="header-btn__title"> Hospital </span></li>
 					</ul>
 				</header>
 				
-				<div id="picture">
+				<div id="picture" >
 					<div class="chart">
 						<br>
 						<br>
@@ -55,7 +72,7 @@
 							<span><canvas id="myChart" width="500" height="400"></canvas></span>
 						</div>
 					</div>
-					<div class="visual">
+					<div class="visual ml-4" id ="visual">
 						<br>
 						<br>
 						<br>
@@ -88,12 +105,8 @@
 							비교할 검사결과들이 없습니다.<br>질병 예측 서비스를 이용하고 자신의 건강 상태를 꾸준히 관리해보세요.<br>
 							<br>
 						</div>
-						<div class="image">
+						<div class="image  pl-5">
 							<img id=stage width="300" height="300"><br>
-							<br>
-							<br>Icon made by Freepik from www.flaticon.com<br>
-							<br>
-							<br>
 						</div>
 					</div>
 				</div>
@@ -102,7 +115,7 @@
 					<span class="prevent">disease prevention: </span>
 				</div>
 
-				<div id="notyet">진행된 검사가 없습니다. 질병 예측 서비스를 이용해 검사를 실시해보세요.</div>
+				<div id="notyet" class="ml-4">진행된 검사가 없습니다. 질병 예측 서비스를 이용해 검사를 실시해보세요.</div>
 
 				<div id="primary">
 					<p>
@@ -158,30 +171,13 @@
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-	<s/common.js"><		var recentResult = /*[[${session.diabetes}]]*/"";
-		var pastResult = /*[[${session.diabetesPast}]]*/"";
-		var recentDate = /*[[${session.diabetesDate}]]*/"";
-		var pastDate = /*[[${session.diabetesPastDate}]]*/"";
+	<script src="./js/common.js"></script>
+	<script th:inline="javascript">
+		var recentResult = [[${session.diabetes}]];
+		var pastResult = [[${session.diabetesPast}]];
+		var recentDate = [[${session.diabetesDate}]];
+		var pastDate = [[${session.diabetesPastDate}]];
 	</script>
 	<script th:inline="javascript" src="./js/mypage_result.js"></script>
 </body>
-</html>/script>
-	<script th:inline="javascript">
-script src="./j
-							class="header-btn__icon"> <a href="/mypage_diabetes"
-								class="MyPage__header-link"> <i class="fas fa-user fa-2x"></i>
-							</a>
-						</span> <span class="header-btn__title"> Diabetes </span></li>
-						<li class="MyPage__header-btn header-btn"><span
-							class="header-btn__icon"> <a href="/mypage_breast"
-								class="MyPage__header-link"> <i
-									class="far fa-lightbulb fa-2x"></i>
-							</a>
-						</span> <span class="header-btn__title"> Cardio Vascular </span></li>
-
-						<li class="MyPage__header-btn header-btn"><span
-							class="header-btn__icon"> <a href="/hospital_https"
-								class="MyPage__header-link"> <i
-									class="far fa-hospital fa-2x"></i>
-							</a>
-						</span> <span class="header-btn__title"> Holi class="MyPage__header-btn header
+</html>
