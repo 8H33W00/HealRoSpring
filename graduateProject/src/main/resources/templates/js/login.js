@@ -123,7 +123,7 @@ function signUp()
     		console.log(response);
     		if(response == 1)
     		{
-    			$('#modalClose').click();
+    			$('#createUserModal').modal('hide');
     			}
     		else if(response == 2)
     		{
